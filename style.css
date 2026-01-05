@@ -226,3 +226,32 @@ form input, form textarea {
 @media (max-width: 768px) {
     .contact-grid { grid-template-columns: 1fr; }
 }
+/* Hakkımızda Sayfası Düzenlemeleri */
+.about-content {
+    background-color: #000;
+    color: #fff;
+    padding-top: 100px; /* Navbar'ın altında kalmaması için */
+}
+
+.content-container {
+    max-width: 800px; /* Yazıların çok dağılmasını engeller */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-section {
+    margin-bottom: 50px;
+    text-align: left; /* Yazıları sola yaslar */
+}
+
+.text-section h2 {
+    color: #CCFF00; /* Neon Yeşil Başlıklar */
+    margin-bottom: 20px;
+}
+
+.quote-box {
+    border-left: 4px solid #CCFF00;
+    padding: 20px;
+    background: #111;
+    font-style: italic;
+}
