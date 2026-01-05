@@ -300,6 +300,21 @@ form input, form textarea {
     margin-top: 20px;
     border-left: 4px solid #CCFF00;
 }
+/* Eğer animasyonun bittiği yer tanımlanmadıysa yazı havada kalır */
+.content-section {
+    animation: fadeInUp 1s ease forwards; 
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Burası 0 olmazsa yazı kayık durur */
+    }
+}
 
 .value-item h3 {
     margin-bottom: 10px;
