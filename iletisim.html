@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gönüllü Ol | Görmenin Ötesinde</title>
+    <title>Gönüllü Ol ve İletişim | Görmenin Ötesinde</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="contact-page">
@@ -21,17 +21,54 @@
         </nav>
     </header>
 
-    <main class="contact-container">
-        <h1>Gönüllü Ol ve İletişim</h1>
-        <p>Bize katılın ve değişimin bir parçası olun.</p>
-        
-        <div style="color: #CCFF00; border: 2px dashed #CCFF00; padding: 50px; margin-top: 50px; text-align: center;">
-            Buraya formlar ve bilgiler gelecek! (Tasarımın hazır.)
+    <main class="contact-wrapper">
+        <section class="contact-hero">
+            <h1>Gönüllü Ol ve İletişim</h1>
+            <p>Bize katılın ve değişim bir parçası olun.</p>
+        </section>
+
+        <div class="contact-grid">
+            <section class="form-section">
+                <h3>Bizimle İletişime Geçin</h3>
+                <form id="contactForm">
+                    <input type="text" placeholder="Adınız Soyadınız" required>
+                    <input type="email" placeholder="E-posta Adresiniz" required>
+                    <textarea placeholder="Mesajınız veya Gönüllülük Amacınız" rows="5"></textarea>
+                    <button type="submit" class="neon-btn">Mesajı Gönder</button>
+                </form>
+            </section>
+
+            <section class="info-section">
+                <div class="info-card">
+                    <h4>Neden Gönüllü Olmalısın?</h4>
+                    <p>Görme engelli gençlerin sosyal hayata katılımına destek vererek daha erişilebilir bir İzmir için çalışıyoruz.</p>
+                </div>
+                <div class="info-card neon-border">
+                    <h4>Neler Yapabilirsin?</h4>
+                    <ul>
+                        <li>Sesli betimleme desteği</li>
+                        <li>Etkinlik organizasyonu</li>
+                        <li>Sosyal medya yönetimi</li>
+                    </ul>
+                </div>
+            </section>
         </div>
+
+        <section class="faq-section">
+            <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+            <div class="faq-item">
+                <h5>Gönüllü olmak için bir yaş sınırı var mı?</h5>
+                <p>Hayır, her yaştan birey projemize katkı sağlayabilir.</p>
+            </div>
+            <div class="faq-item">
+                <h5>Hangi şehirlerden gönüllü olabiliyoruz?</h5>
+                <p>Şu an önceliğimiz İzmir olsa da dijital içerik üretimi için her yerden katılabilirsiniz.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>© 2026 Görmenin Ötesinde</p>
+        <p>© 2026 Görmenin Ötesinde Projesi</p>
     </footer>
 </body>
 </html>
