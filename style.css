@@ -419,3 +419,67 @@ form input, form textarea {
 .high { background: #CCFF00; color: #000; }
 .medium { background: #555; color: #fff; }
 .low { background: #222; color: #888; }
+/* FOOTER TASARIMI */
+.main-footer {
+    background-color: #000;
+    border-top: 1px solid #222;
+    padding: 80px 0 30px 0;
+    margin-top: 100px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    padding: 0 20px;
+}
+
+.footer-brand p { color: #888; margin: 20px 0; }
+.footer-handle { color: #CCFF00; text-decoration: none; font-weight: bold; }
+
+.footer-links h3, .footer-social h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { color: #888; text-decoration: none; transition: 0.3s; }
+.footer-links a:hover { color: #CCFF00; padding-left: 5px; }
+
+/* Sosyal Medya Butonları */
+.social-icons { display: flex; gap: 15px; margin-bottom: 20px; }
+.social-btn {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #CCFF00;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #CCFF00;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: #CCFF00;
+    color: #000;
+    box-shadow: 0 0 15px #CCFF00;
+}
+
+.footer-email { color: #888; font-size: 0.9rem; }
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #111;
+    margin-top: 60px;
+    padding-top: 30px;
+    color: #444;
+    font-size: 0.8rem;
+}
