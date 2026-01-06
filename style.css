@@ -483,3 +483,61 @@ form input, form textarea {
     color: #444;
     font-size: 0.8rem;
 }
+/* GENEL DÜZELTME: Kaymaları Engelle */
+.main-content, .about-container, .contact-wrapper {
+    max-width: 1000px !important; /* Sayfanın sağa sola taşmasını engeller */
+    margin: 0 auto !important;
+    padding: 100px 20px 50px 20px !important;
+    overflow-x: hidden; /* Yatay kaydırmayı kapatır */
+}
+
+/* BAŞLIK DÜZELTME: i'leri İ yaptık ve boyutu makul seviyeye çektik */
+.page-header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem) !important; /* Ekran küçüldükçe başlık da küçülür */
+    text-transform: none !important; /* Küçük i sorununu HTML'den çözdük, burada da garantiledik */
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+/* HARİTA BÖLÜMÜ DÜZELTME */
+.map-section {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.map-visual-container {
+    height: auto; /* Sabit yükseklik yerine içeriğe göre boyansın */
+    min-height: 400px;
+    background: #0a0a0a;
+    border: 2px solid #CCFF00;
+    position: relative;
+    margin: 40px 0;
+}
+
+/* HARİTA AÇIKLAMASI: Sol üstteki kutu */
+.map-legend {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    border: 1px solid #CCFF00;
+    border-radius: 10px;
+    z-index: 10;
+    font-size: 0.9rem;
+}
+
+/* BÖLGE KARTLARI: Yan yana durmaları için */
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Esnek kolonlar */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.location-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 20px;
+    border-radius: 12px;
+}
