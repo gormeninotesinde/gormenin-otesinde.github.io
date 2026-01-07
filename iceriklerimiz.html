@@ -3,213 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İçeriklerimiz | Görmenin Ötesinde</title>
+    <title>İçeriklerimiz - Görmenin Ötesinde</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="content-page">
+<body>
+
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <span class="logo-circle">GÖ</span>
-                <div class="logo-text"><strong>Görmenin Ötesinde</strong></div>
+        <div class="logo-area">
+            <div class="logo-circle">GÖ</div>
+            <div class="logo-text">
+                <h1>Görmenin Ötesinde</h1>
+                <span>@gorseliseslendir</span>
             </div>
-            <ul class="nav-links">
+        </div>
+        <nav>
+            <ul>
                 <li><a href="index.html">Giriş Sayfası</a></li>
                 <li><a href="hakkimizda.html">Hakkımızda</a></li>
                 <li><a href="iceriklerimiz.html" class="active">İçeriklerimiz</a></li>
-                <li><a href="iletisim.html">Gönüllü Ol</a></li>
+                <li><a href="#">Gönüllü Ol</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="main-content">
-        <section class="page-header">
-            <h1>içeriklerimiz</h1>
-            <div class="header-line"></div>
-            <p>İzmir'in görme engelli gençlerin gözünden deneyimi</p>
-        </section>
+    <section class="hero-sub">
+        <h2 class="section-title">İçeriklerimiz</h2>
+        <p class="subtitle">İzmir'in görme engelli gençlerin gözünden deneyimi</p>
+    </section>
 
-        <section class="documentary-section">
-            <h2 class="section-title">Belgesel: Görünmeyen Şehir</h2>
-            <p class="section-desc">Görme engelli gençlerin İzmir'deki günlük yaşam deneyimlerini belgeleyen, şehrin farklı bir perspektiften nasıl algılandığını gözler önüne seren bir belgesel.</p>
-            
-            <div class="video-container">
-                <div class="video-placeholder">
-                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&q=80&w=1000" alt="Belgesel Görseli">
-                    <div class="play-button">
-                        <div class="play-icon"></div>
-                    </div>
+    <section class="video-section">
+        <h3 class="page-subtitle">Belgesel: Görünmeyen Şehir</h3>
+        <p>Görme engelli gençlerin İzmir'deki günlük yaşam deneyimlerini belgeleyen, şehrin farklı bir yüzü...</p>
+        
+        <div class="video-container" style="margin-top: 30px;">
+            <div class="video-placeholder" style="width: 100%; height: 450px; background: #1a1a1a; border: 2px solid var(--neon-green); border-radius: 20px; display: flex; align-items: center; justify-content: center; position: relative;">
+                <div class="play-btn-large" style="width: 80px; height: 80px; background: var(--neon-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-size: 2rem; cursor: pointer;">
+                    <i class="fas fa-play"></i>
                 </div>
-                <div class="video-info">
-                    <h3>Görünmeyen Şehir: İzmir'in Farklı Yüzü</h3>
-                    <span>45 dakika • 2024 • Türkçe • Türkçe Alt Yazı</span>
+                <div class="video-info-overlay" style="position: absolute; bottom: 20px; left: 20px;">
+                    <h4>Görünmeyen Şehir: İzmir'in Farklı Yüzü</h4>
+                    <span style="font-size: 0.8rem;">45 dakika • 2024 • Türkçe • Türkçe Alt Yazı</span>
                 </div>
-            </div>
-        </section>
-    </main>
-</body>
-</html>
-<section class="details-grid">
-            <div class="detail-card">
-                <h3>Belgesel Hakkında</h3>
-                <p>Bu belgesel, İzmir'de yaşayan görme engelli gençlerin kentsel mekanlardaki deneyimlerini, karşılaştıkları zorlukları ve başarı hikayelerini anlatıyor. Kendi sesleriyle anlattıkları hikayeler, şehri farklı bir gözle görmemizi sağlıyor.</p>
-            </div>
-            <div class="detail-card">
-                <h3>Yapım Bilgileri</h3>
-                <ul class="info-list">
-                    <li><span>• Süre:</span> 45 dakika</li>
-                    <li><span>• Yıl:</span> 2024</li>
-                    <li><span>• Dil:</span> Türkçe (Alt yazı mevcut)</li>
-                    <li><span>• Yönetmen:</span> Elif Şahin</li>
-                    <li><span>• Yapımcı:</span> Görseli Seslendir Ekibi</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="map-section">
-            <div class="page-header">
-                <h1>İzmir Deneyim Haritası</h1>
-                <div class="header-line"></div>
-                <p>Belgeselde ziyaret edilen bölgeler ve erişilebilirlik durumlarının interaktif haritası.</p>
-            </div>
-
-            <div class="map-visual-container">
-                <div class="map-placeholder">
-                    <div class="map-point point-1"><span class="pulse"></span>⚡</div>
-                    <div class="map-point point-2"><span class="pulse"></span>⚡</div>
-                    <div class="map-point point-3"><span class="pulse"></span>⚡</div>
-                    
-                    <div class="map-legend">
-                        <h4>📍 Harita Açıklaması</h4>
-                        <p>🟢 Ziyaret Edilen Bölgeler</p>
-                        <p>⚡ Tıklayarak detay görün</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="location-grid">
-                <div class="location-card">
-                    <div class="loc-header"><span>⚡</span> <h3>Alsancak</h3></div>
-                    <p>Kıyı şeridi, tramvay hatları ve yoğun yaya trafiği.</p>
-                    <span class="status-tag medium">Erişilebilirlik: Orta</span>
-                </div>
-                <div class="location-card">
-                    <div class="loc-header"><span>⚡</span> <h3>Konak</h3></div>
-                    <p>Merkezi meydanlar, toplu taşıma kavşağı.</p>
-                    <span class="status-tag low">Erişilebilirlik: Düşük</span>
-                </div>
-                <div class="location-card">
-                    <div class="loc-header"><span>⚡</span> <h3>Karşıyaka</h3></div>
-                    <p>Vapur iskelesi, sahil yürüyüş yolu.</p>
-                    <span class="status-tag high">Erişilebilirlik: Yüksek</span>
-                </div>
-                <div class="location-card">
-                    <div class="loc-header"><span>⚡</span> <h3>Bornova</h3></div>
-                    <p>Üniversite kampüsü, parklar ve yeşil alanlar.</p>
-                    <span class="status-tag medium">Erişilebilirlik: Orta</span>
-                </div>
-            </div>
-        </section>
-<footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <div class="logo">
-                    <span class="logo-circle">GÖ</span>
-                    <div class="logo-text"><strong>Görmenin Ötesinde</strong></div>
-                </div>
-                <p>İzmir'de Görme Engelli Gençlerin Kent Deneyimi</p>
-                <a href="mailto:info@gorseliseslendir.com" class="footer-handle">@gorseliseslendir</a>
-            </div>
-
-            <div class="footer-links">
-                <h3>Hızlı Bağlantılar</h3>
-                <ul>
-                    <li><a href="index.html">Giriş Sayfası</a></li>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                    <li><a href="iceriklerimiz.html">İçeriklerimiz</a></li>
-                    <li><a href="iletisim.html">Gönüllü Ol</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-social">
-                <h3>Sosyal Medya</h3>
-                <div class="social-icons">
-                    <a href="#" class="social-btn">IG</a>
-                    <a href="#" class="social-btn">TW</a>
-                    <a href="#" class="social-btn">FB</a>
-                    <a href="#" class="social-btn">YT</a>
-                </div>
-                <p class="footer-email">info@gorseliseslendir.com</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 Görmenin Ötesinde - Görseli Seslendir, İzmir. Tüm hakları saklıdır.</p>
+
+        <div class="grid-container" style="margin-top: 40px;">
+            <div class="card">
+                <h4>Belgesel Hakkında</h4>
+                <p>Bu belgesel, İzmir'de yaşayan görme engelli gençlerin kentsel mekanlardaki deneyimlerini, karşılaştıkları zorlukları ve başarı hikayelerini anlatıyor.</p>
+            </div>
+            <div class="card">
+                <h4>Yapım Bilgileri</h4>
+                <ul style="list-style: none; color: var(--neon-green);">
+                    <li><i class="fas fa-clock"></i> Süre: 45 dakika</li>
+                    <li><i class="fas fa-calendar"></i> Yıl: 2024</li>
+                    <li><i class="fas fa-language"></i> Dil: Türkçe</li>
+                    <li><i class="fas fa-user"></i> Yönetmen: Elif Şahin</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <h3 class="page-subtitle">İzmir Deneyim Haritası</h3>
+        <p>Belgeselde ziyaret edilen bölgeler ve erişilebilirlik durumlarının interaktif haritası.</p>
+        
+        <div class="map-placeholder" style="width: 100%; height: 400px; background: url('map-bg.jpg') center/cover; border: 2px solid var(--neon-green); border-radius: 20px; margin: 30px 0; position: relative;">
+            <div class="map-tag" style="position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.8); padding: 10px; border: 1px solid var(--neon-green); border-radius: 10px;">
+                <p style="font-size: 0.8rem;"><i class="fas fa-map-marker-alt" style="color: var(--neon-green);"></i> Harita Açıklaması</p>
+                <span style="font-size: 0.7rem;">● Ziyaret Edilen Bölgeler</span>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="card district-card">
+                <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                <h4>Alsancak</h4>
+                <p>Kıyı şeridi, tramvay hatları ve yoğun yaya trafiği.</p>
+                <span class="tag" style="background: orange; color: black; padding: 2px 10px; border-radius: 5px; font-size: 0.7rem; font-weight: bold;">Erişilebilirlik: Orta</span>
+            </div>
+            <div class="card district-card">
+                <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                <h4>Konak</h4>
+                <p>Merkezi meydanlar, toplu taşıma kavşağı.</p>
+                <span class="tag" style="background: red; color: white; padding: 2px 10px; border-radius: 5px; font-size: 0.7rem; font-weight: bold;">Erişilebilirlik: Düşük</span>
+            </div>
+            <div class="card district-card">
+                <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                <h4>Karşıyaka</h4>
+                <p>Vapur iskelesi, sahil yürüyüş yolu.</p>
+                <span class="tag" style="background: green; color: white; padding: 2px 10px; border-radius: 5px; font-size: 0.7rem; font-weight: bold;">Erişilebilirlik: Yüksek</span>
+            </div>
+            <div class="card district-card">
+                <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                <h4>Bornova</h4>
+                <p>Üniversite kampüsü, parklar ve yeşil alanlar.</p>
+                <span class="tag" style="background: orange; color: black; padding: 2px 10px; border-radius: 5px; font-size: 0.7rem; font-weight: bold;">Erişilebilirlik: Orta</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo-area">
+                    <div class="logo-circle">GÖ</div>
+                    <h3>Görmenin Ötesinde</h3>
+                </div>
+                <p style="margin-top: 15px;">İzmir'de Görme Engelli Gençlerin Kent Deneyimi</p>
+                <p style="color: var(--neon-green);">@gorseliseslendir</p>
+            </div>
+            <div class="footer-col">
+                <h4>Hızlı Bağlantılar</h4>
+                <ul style="list-style: none; margin-top: 15px;">
+                    <li><a href="index.html" style="color: white; text-decoration: none;">Giriş Sayfası</a></li>
+                    <li><a href="hakkimizda.html" style="color: white; text-decoration: none;">Hakkımızda</a></li>
+                    <li><a href="iceriklerimiz.html" style="color: white; text-decoration: none;">İçeriklerimiz</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sosyal Medya</h4>
+                <div style="margin-top: 15px;">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.8rem;">info@gorseliseslendir.com</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px; font-size: 0.8rem; opacity: 0.5;">
+            © 2024 Görmenin Ötesinde - Görseli Seslendir, İzmir. Tüm hakları saklıdır.
         </div>
     </footer>
+
 </body>
 </html>
-<main class="content-page-main">
-    <section class="page-header">
-        <h1>İçeriklerimiz</h1>
-        <div class="neon-line"></div>
-        <p>İzmir'in görme engelli gençlerin gözünden deneyimi</p>
-    </section>
-
-    <section class="documentary-block">
-        <h2 class="section-title">Belgesel: Görünmeyen Şehir</h2>
-        <div class="video-frame-neon">
-            <div class="video-overlay">
-                <div class="play-btn-large">▶</div>
-                <div class="video-text-bottom">
-                    <h3>Görünmeyen Şehir: İzmir'in Farklı Yüzü</h3>
-                    <p>45 dakika • 2024 • Türkçe • Türkçe Alt Yazı</p>
-                </div>
-            </div>
-            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1920" class="video-bg-img">
-        </div>
-    </section>
-
-    <div class="details-container">
-        <div class="info-box">
-            <h3>Belgesel Hakkında</h3>
-            <p>Bu belgesel, İzmir'de yaşayan görme engelli gençlerin kentsel mekanlardaki deneyimlerini, karşılaştıkları zorlukları ve başarı hikayelerini anlatıyor.</p>
-        </div>
-        <div class="info-box">
-            <h3>Yapım Bilgileri</h3>
-            <ul class="neon-list">
-                <li><span>●</span> Süre: 45 dakika</li>
-                <li><span>●</span> Yıl: 2024</li>
-                <li><span>●</span> Yönetmen: Elif Şahin</li>
-            </ul>
-        </div>
-    </div>
-
-    <section class="map-exploration">
-        <div class="page-header">
-            <h1>İzmir Deneyim Haritası</h1>
-            <div class="neon-line"></div>
-        </div>
-
-        <div class="map-wrapper-neon">
-            <div class="map-bg-image">
-                <div class="map-point p1" data-label="Alsancak"><span class="pulse"></span>⚡</div>
-                <div class="map-point p2" data-label="Konak"><span class="pulse"></span>⚡</div>
-                <div class="map-point p3" data-label="Karşıyaka"><span class="pulse"></span>⚡</div>
-                
-                <div class="map-legend-box">
-                    <h4>📍 Harita Açıklaması</h4>
-                    <p><span class="dot"></span> Ziyaret Edilen Bölgeler</p>
-                    <p>⚡ Tıklayarak detay görün</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="location-grid-neon">
-            <div class="loc-card"><h3>Alsancak</h3><p>Kıyı şeridi ve yoğun trafik.</p><span class="tag">Orta</span></div>
-            <div class="loc-card"><h3>Konak</h3><p>Merkezi meydanlar ve ulaşım.</p><span class="tag">Düşük</span></div>
-            <div class="loc-card"><h3>Karşıyaka</h3><p>Vapur iskelesi ve sahil yolu.</p><span class="tag">Yüksek</span></div>
-            <div class="loc-card"><h3>Bornova</h3><p>Parklar ve sosyal alanlar.</p><span class="tag">Orta</span></div>
-        </div>
-    </section>
-</main>
