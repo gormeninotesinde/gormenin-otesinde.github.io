@@ -3,9 +3,7 @@
     --arka-plan: #000000;
     --neon-yesil: #ccff00;
     --yazi-beyaz: #ffffff;
-    --yazi-gri: #aaaaaa;
     --kart-rengi: #0a0a0a;
-    --parlama: 0 0 20px rgba(204, 255, 0, 0.4);
 }
 
 * {
@@ -18,175 +16,130 @@
 body {
     background-color: var(--arka-plan);
     color: var(--yazi-beyaz);
-    line-height: 1.6;
+    line-height: 1.5;
     overflow-x: hidden;
-    text-align: center; /* Genel metinleri ortalar */
+    text-align: center;
 }
 
-/* 2. ÜST MENÜ */
+/* 2. ÜST MENÜ (HEADER) - İNCELTİLDİ */
 header {
-    padding: 20px 5%;
+    padding: 10px 5%; /* Daha ince olması için padding azaltıldı */
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(0,0,0,0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(8px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(204, 255, 0, 0.2);
+    border-bottom: 1px solid rgba(204, 255, 0, 0.1);
+}
+
+/* "GÖ" Dairesini Kaldıran Logo Alanı */
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-circle {
+    display: none; /* O "GÖ" dairesini tamamen yok eder */
+}
+
+.logo-text h1 {
+    font-size: 1rem; /* Daha zarif yazı tipi boyutu */
+    letter-spacing: 1px;
+    color: var(--neon-yesil);
+    text-transform: uppercase;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 20px;
 }
 
 nav a {
     text-decoration: none;
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
     transition: 0.3s;
 }
 
-nav a:hover, nav a.active {
-    color: var(--neon-yesil);
-}
-
-/* 3. TÜM SAYFA BAŞLIKLARI VE HERO ALANI */
+/* 3. BAŞLIKLARIN GÖRÜNMESİNİ SAĞLAYAN BOŞLUK */
 .hero, .hero-sub {
-    height: 60vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
-    background: radial-gradient(circle at center, #111 0%, #000 100%);
+    padding: 120px 10% 40px; /* Üstten 120px boşluk vererek header'ın altında kalmasını önledik */
 }
 
 h2, .section-title {
-    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-size: clamp(2rem, 6vw, 4rem);
     color: var(--neon-yesil);
-    text-transform: uppercase;
-    text-shadow: 0 0 25px rgba(204, 255, 0, 0.5);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-/* 4. İÇERİKLER SAYFASI ÖZEL (VİDEO VE HARİTA) */
-.video-container, .map-placeholder {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto; /* Bu satır yatayda tam ortalar */
-    border: 2px solid var(--neon-yesil);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--parlama);
-}
-
-.page-subtitle {
-    font-size: 2rem;
-    margin-top: 50px;
-    color: var(--yazi-beyaz);
-    display: inline-block;
-    border-bottom: 2px solid var(--neon-yesil);
-    padding-bottom: 10px;
-}
-
-/* 5. KART SİSTEMİ (GRID) */
+/* 4. KARTLAR VE İÇERİK */
 section {
-    padding: 60px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* İçindeki her şeyi ortalar */
+    padding: 40px 10%;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 40px;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .card {
     background: var(--kart-rengi);
-    border: 2px solid var(--neon-yesil);
-    border-radius: 20px;
-    padding: 30px;
+    border: 1px solid rgba(204, 255, 0, 0.3); /* Çizgiler daha ince ve zarif */
+    border-radius: 15px;
+    padding: 25px;
     text-align: center;
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.icon-box {
-    width: 55px;
-    height: 55px;
-    background: var(--neon-yesil);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    color: black;
-}
-
-/* 6. BUTONLAR */
-.btn-main {
-    background: var(--neon-yesil);
-    color: black;
-    padding: 15px 40px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-flex;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-.btn-main:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(204, 255, 0, 0.6);
-}
-
-/* 7. FOOTER */
+/* 5. ALT BANT (FOOTER) - KÜÇÜLTÜLDÜ */
 footer {
-    padding: 60px 10%;
+    padding: 30px 10%; /* Dev gibi duran alt bant daraltıldı */
     border-top: 1px solid rgba(204, 255, 0, 0.1);
+    background: #000;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    font-size: 0.8rem;
     text-align: center;
 }
 
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .social-icon {
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--neon-yesil);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 1rem;
     color: var(--neon-yesil);
-    text-decoration: none;
 }
 
-/* 8. MOBİL */
-@media (max-width: 768px) {
-    nav { display: none; }
-    .hero, .hero-sub { height: auto; padding-bottom: 50px; }
+.copyright {
+    margin-top: 20px;
+    font-size: 0.7rem;
+    color: #444;
+}
+
+/* Video ve Harita alanları için tam ortalama */
+.video-container, .map-placeholder {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
 }
