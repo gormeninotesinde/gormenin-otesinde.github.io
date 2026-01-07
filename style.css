@@ -165,3 +165,9 @@ footer {
     background: var(--neon-green);
     color: black;
 }
+.section-title { font-size: 3rem; text-align: center; margin-bottom: 10px; }
+.subtitle { text-align: center; color: #888; margin-bottom: 50px; }
+.page-subtitle { border-left: 5px solid var(--neon-green); padding-left: 15px; margin-bottom: 20px; font-size: 1.8rem; }
+.hero-sub { padding-top: 150px; padding-bottom: 50px; }
+.video-section, .map-section { padding-top: 40px; }
+.district-card { border-style: dashed; opacity: 0.9; } /* Harita kartlarını biraz farklılaştırmak için */
