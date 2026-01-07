@@ -1,11 +1,11 @@
-/* 1. TEMEL RENKLER VE AYARLAR */
+/* 1. TEMEL AYARLAR */
 :root {
     --arka-plan: #000000;
     --neon-yesil: #ccff00;
     --yazi-beyaz: #ffffff;
     --yazi-gri: #aaaaaa;
     --kart-rengi: #0a0a0a;
-    --parlama-efekti: 0 0 20px rgba(204, 255, 0, 0.4);
+    --parlama: 0 0 20px rgba(204, 255, 0, 0.4);
 }
 
 * {
@@ -20,9 +20,10 @@ body {
     color: var(--yazi-beyaz);
     line-height: 1.6;
     overflow-x: hidden;
+    text-align: center; /* Genel metinleri ortalar */
 }
 
-/* 2. ÜST MENÜ (NAVBAR) */
+/* 2. ÜST MENÜ */
 header {
     padding: 20px 5%;
     display: flex;
@@ -31,29 +32,10 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid rgba(204, 255, 0, 0.2);
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-circle {
-    width: 40px;
-    height: 40px;
-    background: var(--neon-yesil);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    font-weight: bold;
-    box-shadow: var(--parlama-efekti);
 }
 
 nav ul {
@@ -66,7 +48,6 @@ nav a {
     text-decoration: none;
     color: white;
     font-size: 0.9rem;
-    font-weight: 500;
     transition: 0.3s;
 }
 
@@ -74,86 +55,97 @@ nav a:hover, nav a.active {
     color: var(--neon-yesil);
 }
 
-/* 3. ANA SAYFA GİRİŞ (HERO) ALANI */
-.hero {
-    height: 100vh;
+/* 3. TÜM SAYFA BAŞLIKLARI VE HERO ALANI */
+.hero, .hero-sub {
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 0 10%;
+    padding-top: 100px;
     background: radial-gradient(circle at center, #111 0%, #000 100%);
 }
 
-.hero h2 {
-    font-size: clamp(2.5rem, 8vw, 5rem); /* Ekran küçüldükçe yazı da küçülür */
-    font-weight: 900;
+h2, .section-title {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
     color: var(--neon-yesil);
     text-transform: uppercase;
-    margin-bottom: 10px;
-    text-shadow: 0 0 30px rgba(204, 255, 0, 0.5); /* Yazıyı belirginleştiren parlama */
+    text-shadow: 0 0 25px rgba(204, 255, 0, 0.5);
+    margin-bottom: 15px;
 }
 
-.hero p {
-    font-size: clamp(1rem, 2vw, 1.4rem);
+/* 4. İÇERİKLER SAYFASI ÖZEL (VİDEO VE HARİTA) */
+.video-container, .map-placeholder {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto; /* Bu satır yatayda tam ortalar */
+    border: 2px solid var(--neon-yesil);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--parlama);
+}
+
+.page-subtitle {
+    font-size: 2rem;
+    margin-top: 50px;
     color: var(--yazi-beyaz);
-    max-width: 800px;
-    margin-bottom: 30px;
+    display: inline-block;
+    border-bottom: 2px solid var(--neon-yesil);
+    padding-bottom: 10px;
 }
 
-/* 4. İÇERİK KARTLARI VE DÜZENİ */
+/* 5. KART SİSTEMİ (GRID) */
 section {
-    padding: 100px 10%;
+    padding: 60px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* İçindeki her şeyi ortalar */
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     width: 100%;
+    max-width: 1200px;
+    margin-top: 40px;
 }
 
 .card {
     background: var(--kart-rengi);
     border: 2px solid var(--neon-yesil);
     border-radius: 20px;
-    padding: 35px;
-    transition: 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: var(--parlama-efekti);
-    transform: translateY(-5px);
+    padding: 30px;
+    text-align: center;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .icon-box {
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     background: var(--neon-yesil);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: black;
-    font-size: 1.2rem;
 }
 
-/* 5. BUTONLAR */
+/* 6. BUTONLAR */
 .btn-main {
     background: var(--neon-yesil);
     color: black;
-    padding: 15px 35px;
+    padding: 15px 40px;
     border-radius: 12px;
     text-decoration: none;
     font-weight: bold;
     display: inline-flex;
-    align-items: center;
-    gap: 10px;
+    margin-top: 20px;
     transition: 0.3s;
-    border: none;
-    cursor: pointer;
 }
 
 .btn-main:hover {
@@ -161,41 +153,24 @@ section {
     box-shadow: 0 0 30px rgba(204, 255, 0, 0.6);
 }
 
-/* 6. İLETİŞİM FORMU */
-input, textarea {
-    width: 100%;
-    padding: 15px;
-    background: #111;
-    border: 1px solid #333;
-    color: white;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    outline: none;
-}
-
-input:focus, textarea:focus {
-    border-color: var(--neon-yesil);
-}
-
-/* 7. ALT BİLGİ (FOOTER) */
+/* 7. FOOTER */
 footer {
-    padding: 60px 10% 30px;
-    background: #050505;
+    padding: 60px 10%;
     border-top: 1px solid rgba(204, 255, 0, 0.1);
-    text-align: center;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
-    text-align: left;
-    margin-bottom: 40px;
+    text-align: center;
 }
 
 .social-icons {
     display: flex;
+    justify-content: center;
     gap: 15px;
+    margin-top: 20px;
 }
 
 .social-icon {
@@ -208,17 +183,10 @@ footer {
     justify-content: center;
     color: var(--neon-yesil);
     text-decoration: none;
-    transition: 0.3s;
 }
 
-.social-icon:hover {
-    background: var(--neon-yesil);
-    color: black;
-}
-
-/* 8. MOBİL AYARLAR */
+/* 8. MOBİL */
 @media (max-width: 768px) {
-    nav { display: none; } /* Mobil menü gerekirse buraya eklenebilir */
-    .hero h2 { font-size: 2.8rem; }
-    section { padding: 60px 5%; }
+    nav { display: none; }
+    .hero, .hero-sub { height: auto; padding-bottom: 50px; }
 }
