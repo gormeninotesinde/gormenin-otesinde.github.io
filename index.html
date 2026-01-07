@@ -2,44 +2,271 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Görmenin Ötesinde | Ana Sayfa</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görmenin Ötesinde | Giriş</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #000000;
+            --neon-green: #ccff00;
+            --text-white: #ffffff;
+            --card-bg: #0a0a0a;
+            --shadow-glow: 0 0 15px rgba(204, 255, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Nav */
+        header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(204, 255, 0, 0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-circle {
+            width: 45px;
+            height: 45px;
+            background: var(--neon-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-weight: bold;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .logo-text h1 { font-size: 1.2rem; }
+        .logo-text span { color: var(--neon-green); font-size: 0.8rem; }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--neon-green);
+            border-bottom: 2px solid var(--neon-green);
+            padding-bottom: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+        }
+
+        .hero h2 {
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        .btn-main {
+            background: var(--neon-green);
+            color: black;
+            padding: 15px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-glow);
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(204, 255, 0, 0.6);
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 50px;
+        }
+
+        .underline {
+            width: 100px;
+            height: 4px;
+            background: var(--neon-green);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* Cards Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 2px solid var(--neon-green);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: var(--neon-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: black;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* Footer */
+        footer {
+            background: #050505;
+            padding: 80px 10% 20px;
+            border-top: 1px solid rgba(204, 255, 0, 0.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .footer-logo h2 { margin-bottom: 10px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #ccc; text-decoration: none; }
+        .footer-links a:hover { color: var(--neon-green); }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border: 2px solid var(--neon-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neon-green);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icon:hover {
+            background: var(--neon-green);
+            color: black;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 3rem; }
+            nav { display: none; } /* Hamburger menü eklenebilir */
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .social-icons { justify-content: center; }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <span class="logo-circle">GÖ</span>
-            <div class="logo-text"><strong>Görmenin Ötesinde</strong><small>@gorseliseslendir</small></div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Giriş Sayfası</a></li>
-            <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="iceriklerimiz.html">İçeriklerimiz</a></li>
-            <li><a href="iletisim.html">Gönüllü Ol</a></li>
-        </ul>
-    </nav>
 
-    <header class="page-header">
-        <h1>Görmenin Ötesinde</h1>
-        <div class="neon-line"></div>
-        <p class="subtitle">İzmir'de Görme Engelli Gençlerin Kent Deneyimi</p>
-        <br><br>
-        <a href="iceriklerimiz.html" class="btn-neon">Belgeseli İzle ▶</a>
+    <header>
+        <div class="logo-area">
+            <div class="logo-circle">GÖ</div>
+            <div class="logo-text">
+                <h1>Görmenin Ötesinde</h1>
+                <span>@gorselseslendir</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Giriş Sayfası</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="iceriklerimiz.html">İçeriklerimiz</a></li>
+                <li><a href="gonullu-ol.html">Gönüllü Ol</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <div class="grid-2">
-            <div class="card">
-                <h2>Bu Projeyi Neden Yaptık?</h2>
-                <p>Görme engelli gençlerin şehir yaşamındaki deneyimlerini görünür kılmak için bu yolculuğa çıktık.</p>
-            </div>
-            <div class="card">
-                <h2>Etki Odaklarımız</h2>
-                <p>Kent erişilebilirliği, sosyal farkındalık ve kapsayıcı yaşam alanları üzerine odaklanıyoruz.</p>
-            </div>
-        </div>
-    </div>
-
-    <footer>© 2024 Görmenin Ötesinde - İzmir. Tüm hakları saklıdır.</footer>
-</body>
-</html>
+    <section class="hero">
+        <h2>Görmenin Ötesinde</h2>
+        <div class="underline" style="width: 200px; margin-bottom: 20px;"></div>
+        <p>İzmir'de Görme Engelli Gençlerin Kent Deneyimi</p>
+        <a href="#belgesel" class="btn-main">Belgeseli İzle
