@@ -296,7 +296,47 @@ footer {
     gap: 30px;
     text-align: left;
 }
+/* GEREKSİZ TÜM FOOTERLARI GİZLE */
+footer:not(.kucuk-footer) {
+    display: none !important;
+}
 
+/* YENİ NESİL FOOTER TASARIMI */
+.kucuk-footer {
+    padding: 60px 8% 30px !important;
+    background: #000 !important;
+    border-top: 1px solid #1a1a1a;
+    display: block !important;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.footer-logo h2 {
+    font-size: 2rem !important;
+    line-height: 1.1;
+    color: var(--neon-yesil);
+    margin: 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--neon-yesil);
+}
 .footer-logo h2 {
     font-size: 2rem;
     color: var(--neon-yesil);
