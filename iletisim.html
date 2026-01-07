@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim | Görmenin Ötesinde</title>
+    <title>İletişim ve Gönüllülük | Görmenin Ötesinde</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,8 +14,7 @@
         <div class="logo-area">
             <div class="logo-circle">GÖ</div>
             <div class="logo-text">
-                <h1>Görmenin Ötesinde</h1>
-                <span>@gorselseslendir</span>
+                <h1 style="font-size: 1.2rem;">Görmenin Ötesinde</h1>
             </div>
         </div>
         <nav>
@@ -28,62 +27,66 @@
         </nav>
     </header>
 
-    <section style="padding-top: 150px; text-align: center;">
-        <h2 style="font-size: 3.5rem;">İletişim</h2>
-        <div style="width: 100px; height: 4px; background: #ccff00; margin: 10px auto;"></div>
-        <p style="color: #ccc; font-size: 1.1rem; max-width: 600px; margin: 20px auto;">
-            Sorularınız, iş birliği teklifleriniz veya gönüllülük talepleriniz için bize ulaşabilirsiniz.
-        </p>
+    <section class="hero-sub">
+        <h2 class="section-title">Bize Katılın</h2>
+        <p style="color: #ccc;">İster mesaj gönderin, ister gönüllü ekibimize dahil olun.</p>
     </section>
 
     <section>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px;">
+        <div class="grid-container">
             
             <div class="card">
-                <h3 style="margin-bottom: 25px; color: #ccff00;"><i class="fas fa-envelope-open-text"></i> Mesaj Gönderin</h3>
-                <form action="#" style="display: flex; flex-direction: column; gap: 20px;">
-                    <div>
-                        <input type="text" placeholder="Adınız Soyadınız" required style="width: 100%; padding: 12px; background: #151515; border: 1px solid #333; color: white; border-radius: 8px;">
-                    </div>
-                    <div>
-                        <input type="email" placeholder="E-posta Adresiniz" required style="width: 100%; padding: 12px; background: #151515; border: 1px solid #333; color: white; border-radius: 8px;">
-                    </div>
-                    <div>
-                        <textarea placeholder="Mesajınız..." rows="5" required style="width: 100%; padding: 12px; background: #151515; border: 1px solid #333; color: white; border-radius: 8px; resize: vertical;"></textarea>
-                    </div>
-                    <button type="submit" class="btn-main" style="border: none; cursor: pointer; width: 100%; justify-content: center;">Gönder</button>
+                <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                <h3>Mesaj Gönderin</h3>
+                <p style="font-size: 0.8rem; color: #888; margin-bottom: 20px;">Sorularınız için bu formu kullanabilirsiniz.</p>
+                
+                <form action="#" style="width: 100%;">
+                    <input type="text" placeholder="Adınız Soyadınız" required>
+                    <input type="email" placeholder="E-posta Adresiniz" required>
+                    <textarea placeholder="Mesajınız..." rows="4" required></textarea>
+                    <button type="submit" class="btn-main" style="width: 100%;">Gönder</button>
                 </form>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 30px;">
-                <div class="card">
-                    <h3>Bize Ulaşın</h3>
-                    <p style="color: #aaa; margin-bottom: 20px;">Erişilebilir bir dünya için İzmir'den yola çıktık.</p>
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                        <i class="fas fa-at" style="color: #ccff00;"></i>
-                        <span>info@gorselseslendir.com</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <i class="fas fa-location-dot" style="color: #ccff00;"></i>
-                        <span>İzmir, Türkiye</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Sosyal Medya</h3>
-                    <div style="display: flex; gap: 15px; margin-top: 10px;">
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
+            <div class="card" style="border-color: #ffffff;"> <div class="icon-box" style="background: white;"><i class="fas fa-hands-helping"></i></div>
+                <h3 style="color: white;">Gönüllü Olun</h3>
+                <p style="font-size: 0.8rem; color: #888; margin-bottom: 20px;">Ekibimize katılarak fark yaratın.</p>
+                
+                <form action="#" style="width: 100%;">
+                    <input type="text" placeholder="Adınız Soyadınız" required>
+                    <select style="width: 100%; padding: 15px; background: #111; border: 1px solid #333; color: white; border-radius: 10px; margin-bottom: 15px;">
+                        <option value="" disabled selected>Gönüllülük Alanı Seçin</option>
+                        <option value="seslendirme">Görsel Seslendirme</option>
+                        <option value="saha">Saha Araştırması</option>
+                        <option value="sosyal">Sosyal Medya Desteği</option>
+                    </select>
+                    <textarea placeholder="Neden gönüllü olmak istiyorsunuz?" rows="4" required></textarea>
+                    <button type="submit" class="btn-main" style="width: 100%; background: white;">Başvuruyu Tamamla</button>
+                </form>
             </div>
 
         </div>
     </section>
 
-    <footer style="margin-top: 50px; text-align: center; padding: 40px 0; border-top: 1px solid #222;">
-        <p style="color: #555;">© 2024 Görmenin Ötesinde</p>
+    <section style="padding-top: 0;">
+        <div class="grid-container" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div style="text-align: center;">
+                <i class="fas fa-map-marker-alt" style="color: var(--neon-yesil); font-size: 1.5rem;"></i>
+                <p style="margin-top: 10px;">İzmir, Türkiye</p>
+            </div>
+            <div style="text-align: center;">
+                <i class="fas fa-phone" style="color: var(--neon-yesil); font-size: 1.5rem;"></i>
+                <p style="margin-top: 10px;">info@gorselseslendir.com</p>
+            </div>
+            <div style="text-align: center;">
+                <i class="fab fa-instagram" style="color: var(--neon-yesil); font-size: 1.5rem;"></i>
+                <p style="margin-top: 10px;">@gorselseslendir</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Görmenin Ötesinde</p>
     </footer>
 
     <script src="script.js"></script>
