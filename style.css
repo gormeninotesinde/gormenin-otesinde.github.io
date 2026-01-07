@@ -81,3 +81,24 @@ footer {
 
 /* Logo dairesini her ihtimale karşı gizle */
 .logo-circle { display: none !important; }
+/* Kartların yan yana gelmesi ve ortalanması için ek kural */
+.info-cards {
+    padding: 60px 10%;
+    background: #000;
+}
+
+.hero {
+    padding-bottom: 20px; /* Butonların altına biraz boşluk */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
