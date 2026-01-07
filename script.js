@@ -1,17 +1,12 @@
-// Basit Scroll Animasyonu
+// Sayfa kaydırıldığında header arka planını koyulaştır
 window.addEventListener('scroll', () => {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        const speed = 0.05;
-        const rect = card.getBoundingClientRect();
-        if(rect.top < window.innerHeight) {
-            card.style.opacity = 1;
-            card.style.transform = 'translateY(0)';
-        }
-    });
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.style.background = 'rgba(0, 0, 0, 0.95)';
+    } else {
+        header.style.background = 'rgba(0, 0, 0, 0.8)';
+    }
 });
 
-// Belgesel butonu etkileşimi
-document.querySelector('.cta-primary').addEventListener('click', () => {
-    document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
-});
+// İleride buraya mobil menü açma/kapama fonksiyonu eklenebilir
+console.log("Görmenin Ötesinde projesi yüklendi!");
