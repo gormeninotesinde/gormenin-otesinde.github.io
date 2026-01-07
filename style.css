@@ -773,3 +773,86 @@ form input, form textarea {
 }
 
 .loc-card:hover { border-color: #CCFF00; transform: translateY(-5px); }
+/* İletişim Sayfası Özel Düzenlemeler */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Form biraz daha geniş */
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Form Tasarımı */
+.neon-form {
+    background: #0a0a0a;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #222;
+}
+
+.input-group { margin-bottom: 25px; }
+.input-group label { display: block; color: #CCFF00; margin-bottom: 10px; font-weight: bold; }
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    background: #111;
+    border: 1px solid #333;
+    padding: 15px;
+    color: #fff;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: #CCFF00;
+    box-shadow: 0 0 10px rgba(204, 255, 0, 0.2);
+    outline: none;
+}
+
+.submit-btn-neon {
+    width: 100%;
+    background: #CCFF00;
+    color: #000;
+    padding: 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(204, 255, 0, 0.3);
+    transition: 0.4s;
+}
+
+.submit-btn-neon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px #CCFF00;
+}
+
+/* Sağ Taraf Kartlar */
+.why-join h2 { margin-bottom: 30px; font-size: 2rem; }
+
+.benefit-card {
+    display: flex;
+    gap: 20px;
+    background: #000;
+    border: 1px solid #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.benefit-card:hover {
+    border-color: #CCFF00;
+    background: #050505;
+}
+
+.benefit-icon { font-size: 1.8rem; }
+.benefit-text h4 { color: #CCFF00; margin-bottom: 5px; }
+.benefit-text p { color: #888; font-size: 0.9rem; line-height: 1.5; }
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .contact-wrapper { grid-template-columns: 1fr; }
+}
