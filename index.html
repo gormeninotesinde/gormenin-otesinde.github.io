@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş | Görmenin Ötesinde</title>
+    <title>Görmenin Ötesinde | Giriş</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -13,17 +13,18 @@
 
     <header>
         <div class="logo-area">
+            <div class="logo-circle">GÖ</div>
             <div class="logo-text">
                 <h1>Görmenin Ötesinde</h1>
-                <p style="color: var(--neon-yesil); font-size: 0.7rem; margin: 0;">@gorselseslendir</p>
+                <span>@gorselseslendir</span>
             </div>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Giriş</a></li>
+                <li><a href="index.html" class="active">Giriş Sayfası</a></li>
                 <li><a href="hakkimizda.html">Hakkımızda</a></li>
                 <li><a href="iceriklerimiz.html">İçeriklerimiz</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
+                <li><a href="iletisim.html">Gönüllü Ol</a></li>
             </ul>
         </nav>
     </header>
@@ -31,46 +32,64 @@
     <main>
         <section class="hero">
             <h2>Görmenin Ötesinde</h2>
-            <div style="width: 80px; height: 4px; background: var(--neon-yesil); margin: 20px auto;"></div>
+            <div class="hero-line"></div>
             <p>İzmir'de Görme Engelli Gençlerin Kent Deneyimi</p>
-            
-            <div class="hero-buttons">
-                <a href="iceriklerimiz.html" class="btn-main">Belgeseli İzle <i class="fas fa-play" style="margin-left:8px; font-size:0.8rem;"></i></a>
-                <a href="iletisim.html" class="btn-outline">Gönüllü Ol <i class="fas fa-user-plus" style="margin-left:8px; font-size:0.8rem;"></i></a>
-            </div>
-            
-            <p style="margin-top: 40px; font-size: 0.8rem; color: var(--neon-yesil); letter-spacing: 2px;">AŞAĞI KAYDIRIN</p>
+            <a href="iceriklerimiz.html" class="btn-neon">
+                Belgeseli İzle <i class="fas fa-play"></i>
+            </a>
         </section>
 
-        <section class="info-cards">
-            <div class="grid-container">
-                <div class="card">
-                    <div class="icon-box"><i class="fas fa-eye"></i></div>
-                    <h3>Bu Projeyi Neden Yaptık?</h3>
-                    <p>Görme engelli gençlerin şehir yaşamındaki deneyimlerini görünür kılmak ve toplumsal farkındalığı artırmak için bu yolculuğa çıktık.</p>
-                    <a href="hakkimizda.html" style="color: var(--neon-yesil); text-decoration: none; font-size: 0.9rem; font-weight: bold; margin-top: 15px; display: inline-block;">Daha Fazla Öğren ></a>
-                </div>
+        <section class="info-section">
+            <div class="card">
+                <div class="icon"><i class="fas fa-eye"></i></div>
+                <h3>Bu Projeyi Neden Yaptık?</h3>
+                <p>Görme engelli gençlerin şehir yaşamındaki deneyimlerini görünür kılmak ve toplumsal farkındalığı artırmak için bu yolculuğa çıktık.</p>
+                <a href="hakkimizda.html" style="color:var(--neon-yesil); text-decoration:none; display:block; margin-top:20px; font-weight:bold;">Daha Fazla Öğren ></a>
+            </div>
 
-                <div class="card">
-                    <div class="icon-box"><i class="fas fa-bullseye"></i></div>
-                    <h3>Etki Odaklarımız</h3>
-                    <ul style="list-style: none; text-align: left; padding: 0;">
-                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--neon-yesil); margin-right: 10px;"></i> Kent Erişilebilirliği</li>
-                        <li style="margin-bottom: 12px;"><i class="fas fa-check-circle" style="color: var(--neon-yesil); margin-right: 10px;"></i> Sosyal Farkındalık</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--neon-yesil); margin-right: 10px;"></i> Katılımcı Yaşam</li>
-                    </ul>
-                </div>
+            <div class="card">
+                <div class="icon"><i class="fas fa-bullseye"></i></div>
+                <h3>Etki Odaklarımız</h3>
+                <ul style="list-style:none; color:#999;">
+                    <li style="margin-bottom:10px;"><i class="fas fa-check" style="color:var(--neon-yesil); margin-right:10px;"></i> Kent Erişilebilirliği</li>
+                    <li style="margin-bottom:10px;"><i class="fas fa-check" style="color:var(--neon-yesil); margin-right:10px;"></i> Sosyal Farkındalık</li>
+                    <li><i class="fas fa-check" style="color:var(--neon-yesil); margin-right:10px;"></i> Katılımcı Yaşam</li>
+                </ul>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p class="footer-text">© 2024 Görmenin Ötesinde - Görseli Seslendir, İzmir. Tüm hakları saklıdır.</p>
-            <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <h2>GÖRMENİN<br>ÖTESİNDE</h2>
+                <p style="color:#555; margin-top:15px;">İzmir'de Görme Engelli Gençlerin Kent Deneyimi</p>
+                <p style="color:var(--neon-yesil); margin-top:5px;">@gorselseslendir</p>
             </div>
+            
+            <div class="footer-links">
+                <h4>Hızlı Bağlantılar</h4>
+                <ul>
+                    <li><a href="index.html">Giriş Sayfası</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="iceriklerimiz.html">İçeriklerimiz</a></li>
+                    <li><a href="iletisim.html">Gönüllü Ol</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Sosyal Medya</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p style="margin-top:20px; color:#555; font-size:0.9rem;">info@gorselseslendir.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2024 Görmenin Ötesinde - Görseli Seslendir, İzmir. Tüm hakları saklıdır.
         </div>
     </footer>
 
