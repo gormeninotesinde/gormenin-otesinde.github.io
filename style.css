@@ -268,3 +268,36 @@ footer {
     transition: opacity 1s ease;
     pointer-events: none;
 }
+/* --- TASARIM DÜZELTMELERİ --- */
+
+/* Bize Katılın Alanı */
+.join-us {
+    padding: 100px 5%;
+    text-align: center;
+    background: #000;
+}
+
+.join-us h2 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+/* Footer Boyutunu Küçülten Kısım */
+footer {
+    padding: 40px 8% 20px !important; /* !important ekledik ki eski büyük halini kesin silsin */
+    background: #000;
+    border-top: 1px solid #1a1a1a;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 30px;
+    text-align: left;
+}
+
+.footer-logo h2 {
+    font-size: 2rem;
+    color: var(--neon-yesil);
+}
