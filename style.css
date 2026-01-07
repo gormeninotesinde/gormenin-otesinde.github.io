@@ -1,44 +1,47 @@
-/* GENEL AYARLAR */
-* { margin: 0; padding: 0; box-box: border-box; font-family: 'Inter', sans-serif; }
-body { background-color: #000; color: #fff; line-height: 1.6; overflow-x: hidden; }
-a { text-decoration: none; color: inherit; }
+/* 1. TEMEL AYARLAR VE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
-/* NAVBAR (Her sayfada aynı duracak) */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: #000; color: #fff; line-height: 1.6; overflow-x: hidden; }
+
+/* 2. SABİT NAVİGASYON (Tüm sayfalarda aynı duracak) */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 5%; background: rgba(0,0,0,0.9);
-    position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 1px solid #222;
+    padding: 20px 8%; background: rgba(0,0,0,0.95);
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    border-bottom: 1px solid #1a1a1a; backdrop-filter: blur(10px);
 }
-.logo { display: flex; align-items: center; gap: 10px; }
-.logo-circle { background: #CCFF00; color: #000; padding: 5px 8px; border-radius: 50%; font-weight: bold; }
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-circle { background: #CCFF00; color: #000; padding: 6px 10px; border-radius: 50%; font-weight: 800; box-shadow: 0 0 15px #CCFF00; }
+.logo-text strong { font-size: 1.1rem; display: block; }
+.logo-text small { color: #CCFF00; font-size: 0.75rem; }
+
 .nav-links { display: flex; list-style: none; gap: 30px; }
-.nav-links a:hover { color: #CCFF00; }
+.nav-links a { font-weight: 600; font-size: 0.9rem; color: #888; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: #CCFF00; text-shadow: 0 0 10px #CCFF00; }
 
-/* SAYFA YAPISI (Hizalama Sorununu Çözen Kısım) */
-section, .main-content, .about-page-content, .contact-wrapper {
-    max-width: 1100px; margin: 0 auto; padding: 120px 20px 60px 20px;
+/* 3. SAYFA BAŞLIKLARI (Neon Çizgili) */
+.page-header { text-align: center; padding: 150px 20px 60px; max-width: 900px; margin: 0 auto; }
+.page-header h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 800; margin-bottom: 15px; }
+.neon-line { width: 80px; height: 5px; background: #CCFF00; margin: 0 auto 25px; box-shadow: 0 0 20px #CCFF00; border-radius: 10px; }
+
+/* 4. GENEL KONTEYNER (Hizalama Buradan Sorulur) */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* 5. KART TASARIMLARI */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 50px; }
+.card { background: #0a0a0a; border: 1px solid #222; padding: 40px; border-radius: 20px; transition: 0.4s; }
+.card:hover { border-color: #CCFF00; transform: translateY(-5px); }
+
+/* 6. BUTONLAR */
+.btn-neon {
+    background: #CCFF00; color: #000; padding: 15px 35px; border-radius: 50px;
+    font-weight: 800; display: inline-block; box-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
+    transition: 0.3s; border: none; cursor: pointer;
 }
+.btn-neon:hover { transform: scale(1.05); box-shadow: 0 0 40px #CCFF00; }
 
-/* BAŞLIKLAR VE NEON ÇİZGİ */
-h1 { font-size: 3.5rem; margin-bottom: 10px; }
-.neon-line { width: 60px; height: 4px; background: #CCFF00; margin-bottom: 30px; box-shadow: 0 0 15px #CCFF00; }
+/* 7. FOOTER */
+footer { text-align: center; padding: 80px 20px; border-top: 1px solid #111; color: #444; font-size: 0.8rem; }
 
-/* KARTLAR (İçerikler, Hakkımızda ve İletişim Kartları İçin Ortak) */
-.info-box, .detail-card, .value-item, .benefit-card, .loc-card {
-    background: #111; border: 1px solid #222; padding: 25px; border-radius: 15px; margin-bottom: 20px;
-    transition: 0.3s;
-}
-.info-box:hover, .loc-card:hover { border-color: #CCFF00; }
-
-/* İÇERİKLER SAYFASI ÖZEL (Harita ve Video) */
-.video-frame-neon, .map-bg-image {
-    width: 100%; border: 2px solid #CCFF00; border-radius: 20px; 
-    margin: 20px 0; overflow: hidden; position: relative;
-}
-.map-bg-image { height: 400px; background: #0a0a0a; } /* Buraya görsel gelecek */
-
-/* İLETİŞİM FORMU */
-.neon-form input, .neon-form textarea {
-    width: 100%; background: #000; border: 1px solid #333; padding: 15px; color: #fff; margin-bottom: 15px; border-radius: 8px;
-}
-.submit-btn-neon { background: #CCFF00; color: #000; padding: 15px 30px; border: none; font-weight: bold; cursor: pointer; width: 100%; border-radius: 8px; }
+@media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } .nav-links { display: none; } }
