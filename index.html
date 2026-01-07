@@ -2,131 +2,44 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Görmenin Ötesinde</title>
+    <title>Görmenin Ötesinde | Ana Sayfa</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-circle">GÖ</span>
+            <div class="logo-text"><strong>Görmenin Ötesinde</strong><small>@gorseliseslendir</small></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Giriş Sayfası</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="iceriklerimiz.html">İçeriklerimiz</a></li>
+            <li><a href="iletisim.html">Gönüllü Ol</a></li>
+        </ul>
+    </nav>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <span class="logo-circle">GÖ</span>
-                <div class="logo-text">
-                    <strong>Görmenin Ötesinde</strong>
-                    <small>@gorselseslendir</small>
-                </div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="home">Giriş Sayfası</a></li>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="iceriklerimiz.html">İçeriklerimiz</a></li>
-                <li><a href="iletisim.html">Gönüllü Ol</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <h1 class="main-title">Görmenin Ötesinde</h1>
+    <header class="page-header">
+        <h1>Görmenin Ötesinde</h1>
         <div class="neon-line"></div>
         <p class="subtitle">İzmir'de Görme Engelli Gençlerin Kent Deneyimi</p>
-        <button class="cta-primary">Belgeseli İzle <span>▶</span></button>
-        <div class="scroll-indicator">
-            <span>AŞAĞI KAYDIRIN</span>
-            <div class="mouse"></div>
-        </div>
-    </section>
+        <br><br>
+        <a href="iceriklerimiz.html" class="btn-neon">Belgeseli İzle ▶</a>
+    </header>
 
-    <section id="content" class="video-section">
-        <h2>Belgeselimiz</h2>
-        <div class="video-placeholder">
-            <div class="play-trigger">▶</div>
-        </div>
-    </section>
-
-    <section id="about" class="info-grid">
-        <div class="card">
-            <div class="card-header"><span class="icon-dot"></span> Bu Projeyi Neden Yaptık?</div>
-            <p>İzmir'in sokaklarında görme engelli bireylerin yaşadığı deneyimleri ve kentsel erişilebilirliği farkındalık yaratmak amacıyla belgeliyoruz.</p>
-            <a href="#" class="card-link">Daha Fazla Öğren ➔</a>
-        </div>
-        <div class="card highlight">
-            <div class="card-header"><span class="icon-dot"></span> Etki Odaklarımız</div>
-            <ul>
-                <li>Kentsel Farkındalık</li>
-                <li>Sosyal Kapsayıcılık</li>
-                <li>Dijital Erişilebilirlik</li>
-            </ul>
-            <a href="#" class="card-link">Raporu İncele ➔</a>
-        </div>
-    </section>
-
-    <section id="join" class="join-section">
-        <h2>Bize Katılın</h2>
-        <p>Projeye destek olmak veya gönüllü olmak için bize ulaşın.</p>
-        <button class="cta-secondary">Gönüllü Ol</button>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <span class="logo-circle">GÖ</span>
-                <p>Görmenin Ötesinde</p>
+    <div class="container">
+        <div class="grid-2">
+            <div class="card">
+                <h2>Bu Projeyi Neden Yaptık?</h2>
+                <p>Görme engelli gençlerin şehir yaşamındaki deneyimlerini görünür kılmak için bu yolculuğa çıktık.</p>
             </div>
-            <div class="footer-links">
-                <div>
-                    <h4>Menü</h4>
-                    <a href="#">Ana Sayfa</a>
-                    <a href="#">Hakkımızda</a>
-                </div>
-                <div>
-                    <h4>Sosyal Medya</h4>
-                    <a href="#">Instagram</a>
-                    <a href="#">YouTube</a>
-                </div>
+            <div class="card">
+                <h2>Etki Odaklarımız</h2>
+                <p>Kent erişilebilirliği, sosyal farkındalık ve kapsayıcı yaşam alanları üzerine odaklanıyoruz.</p>
             </div>
         </div>
-        <p class="copyright">© 2025 Görmenin Ötesinde. Tüm hakları saklıdır.</p>
-    </footer>
+    </div>
 
-    <script src="script.js"></script>
+    <footer>© 2024 Görmenin Ötesinde - İzmir. Tüm hakları saklıdır.</footer>
 </body>
 </html>
-<section class="hero-section">
-    <div class="hero-content">
-        <h1 class="main-title">Görmenin Ötesinde</h1>
-        <div class="neon-line"></div>
-        <p class="hero-subtitle">İzmir'de Görme Engelli Gençlerin Kent Deneyimi</p>
-        <a href="#video-section" class="neon-button">Belgeseli İzle <span class="play-arrow">▶</span></a>
-        <div class="scroll-indicator">AŞAĞI KAYDIRIN</div>
-    </div>
-</section>
-
-<section class="features-section">
-    <div class="features-container">
-        <div class="feature-card">
-            <div class="icon-circle">👁</div>
-            <h2>Bu Projeyi Neden Yaptık?</h2>
-            <p>Görme engelli gençlerin şehir yaşamındaki deneyimlerini görünür kılmak ve toplumsal farkındalığı artırmak için bu yolculuğa çıktık.</p>
-            <a href="hakkimizda.html" class="learn-more">Daha Fazla Öğren ></a>
-        </div>
-
-        <div class="feature-card">
-            <div class="icon-circle">🎯</div>
-            <h2>Etki Odaklarımız</h2>
-            <ul class="feature-list">
-                <li><strong>Kent Erişilebilirliği:</strong> Şehir planlamasında kapsayıcı tasarım standartları.</li>
-                <li><strong>Sosyal Farkındalık:</strong> Toplumsal bilinç ve empati geliştirme.</li>
-                <li><strong>Katılımcı Yaşam:</strong> Görme engelli bireylerin aktif toplumsal katılımı.</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="join-section">
-    <h2>Bize Katılın</h2>
-    <div class="neon-line"></div>
-    <p>Erişilebilir bir gelecek için gönüllü olun ve fark yaratın</p>
-    <a href="iletisim.html" class="big-neon-btn">Gönüllü Ol 👤</a>
-</section>
