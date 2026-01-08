@@ -19,7 +19,31 @@
 
         /* KONTEYNER */
         .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 2rem; margin-bottom: 20px; font-weight: 800; }
         .neon-divider { width: 60px; height: 4px; background: #CCFF00; margin-bottom: 30px; box-shadow: 0 0 10px #CCFF00; }
+
+        /* BELGESEL ALANI (VİDEO) */
+        .video-section {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #0a0a0a;
+            border: 2px solid #CCFF00;
+            border-radius: 30px;
+            margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(204, 255, 0, 0.1);
+        }
+        .play-button {
+            width: 80px; height: 80px; background: #CCFF00; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: #000; cursor: pointer; transition: 0.3s;
+            box-shadow: 0 0 20px #CCFF00; z-index: 5;
+        }
+        .play-button:hover { transform: scale(1.1); box-shadow: 0 0 40px #CCFF00; }
 
         /* HARİTA ALANI */
         .map-section {
@@ -29,48 +53,32 @@
             background: #050505 url('https://gorseliseslendir.github.io/assets/images/izmir-harita.png') center/cover;
             border-radius: 30px;
             border: 1px solid #222;
-            margin: 40px 0;
+            margin-bottom: 40px;
             overflow: hidden;
         }
         .dot {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #CCFF00;
-            border-radius: 50%;
-            box-shadow: 0 0 15px #CCFF00;
+            width: 20px; height: 20px; background: #CCFF00; border-radius: 50%;
+            box-shadow: 0 0 15px #CCFF00; cursor: pointer;
         }
         .dot::after {
-            content: "";
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            border: 2px solid #CCFF00;
-            border-radius: 50%;
-            animation: pulse 2s infinite;
+            content: ""; position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border: 2px solid #CCFF00; border-radius: 50%; animation: pulse 2s infinite;
         }
         @keyframes pulse { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(2); opacity: 0; } }
 
-        /* 4 ANA BÖLGE KARTLARI */
+        /* 4 BÖLGE KARTLARI */
         .regions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
-            margin-top: 40px;
         }
         .region-card {
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
-            padding: 30px;
-            border-radius: 20px;
-            transition: 0.3s;
-            text-align: left;
+            background: #0a0a0a; border: 1px solid #1a1a1a; padding: 30px;
+            border-radius: 20px; transition: 0.3s;
         }
-        .region-card:hover {
-            border-color: #CCFF00;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(204, 255, 0, 0.1);
-        }
-        .region-card h3 { color: #CCFF00; margin-bottom: 15px; font-size: 1.3rem; }
+        .region-card:hover { border-color: #CCFF00; transform: translateY(-5px); }
+        .region-card h3 { color: #CCFF00; margin-bottom: 10px; }
         .region-card p { color: #888; font-size: 0.9rem; margin-bottom: 15px; }
         .region-link { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.8rem; border-bottom: 1px solid #CCFF00; }
 
@@ -96,12 +104,20 @@
     </nav>
 
     <div class="container">
-        <header style="text-align: center; margin-bottom: 50px;">
-            <h1 style="font-size: 3.5rem;">Deneyim Haritası</h1>
+        <header style="text-align: center; margin-bottom: 60px;">
+            <h1 style="font-size: 3.5rem; font-weight: 800;">İçeriklerimiz</h1>
             <div class="neon-divider" style="margin: 0 auto;"></div>
-            <p style="color: #888;">İzmir'in dört ana noktasındaki erişilebilirlik yolculuğu.</p>
+            <p style="color: #888;">İzmir'in seslerini, yollarını ve hikayelerini keşfedin.</p>
         </header>
 
+        <h2>Proje Belgeseli</h2>
+        <div class="neon-divider"></div>
+        <div class="video-section">
+            <div class="play-button">▶</div>
+        </div>
+
+        <h2>Deneyim Haritası</h2>
+        <div class="neon-divider"></div>
         <div class="map-section">
             <div class="dot" style="top: 45%; left: 45%;" title="Konak"></div>
             <div class="dot" style="top: 38%; left: 52%;" title="Alsancak"></div>
@@ -112,37 +128,34 @@
         <div class="regions-grid">
             <div class="region-card">
                 <h3>Konak</h3>
-                <p>Tarihi Saat Kulesi ve Kemeraltı rotasında görme engelli gençlerin kalabalık ve zemin dokusuyla imtihanı.</p>
-                <a href="#" class="region-link">DENEYİMİ İNCELE →</a>
+                <p>Kemeraltı ve Saat Kulesi çevresindeki zemin dokusu ve kalabalık analizi.</p>
+                <a href="#" class="region-link">DENEYİMİ İZLE →</a>
             </div>
-
             <div class="region-card">
                 <h3>Alsancak</h3>
-                <p>Kordon boyu ve Gül Sokak hattında sosyal yaşamın ve mekan girişlerinin erişilebilirlik analizi.</p>
-                <a href="#" class="region-link">DENEYİMİ İNCELE →</a>
+                <p>Kordon boyu ve Gül Sokak hattındaki sosyal mekan erişilebilirliği.</p>
+                <a href="#" class="region-link">DENEYİMİ İZLE →</a>
             </div>
-
             <div class="region-card">
                 <h3>Karşıyaka</h3>
-                <p>Çarşı ve vapur iskelesi çevresindeki sesli yönlendirmeler ve yaya yollarının kullanılabilirliği.</p>
-                <a href="#" class="region-link">DENEYİMİ İNCELE →</a>
+                <p>Çarşı içi ve iskele çevresindeki sesli yönlendirme deneyimleri.</p>
+                <a href="#" class="region-link">DENEYİMİ İZLE →</a>
             </div>
-
             <div class="region-card">
                 <h3>Üçkuyular</h3>
-                <p>Aktarma merkezleri ve yeni gelişen kentsel alanlardaki ulaşım entegrasyonu deneyimleri.</p>
-                <a href="#" class="region-link">DENEYİMİ İNCELE →</a>
+                <p>Ulaşım aktarma merkezleri ve yeni kentsel alanlardaki kapsayıcılık.</p>
+                <a href="#" class="region-link">DENEYİMİ İZLE →</a>
             </div>
         </div>
     </div>
 
     <footer>
         <div class="footer-grid">
-            <div><strong>Görmenin Ötesinde</strong><p>İzmir Deneyimi</p></div>
-            <div><strong>Linkler</strong><p>Giriş<br>Hakkımızda</p></div>
-            <div><strong>İletişim</strong><p>info@gorseliseslendir.com</p></div>
+            <div><strong>Görmenin Ötesinde</strong><p style="font-size: 0.9rem; color: #555;">İzmir Kent Deneyimi</p></div>
+            <div><strong>Bağlantılar</strong><p style="font-size: 0.9rem; color: #555;">Giriş<br>Hakkımızda</p></div>
+            <div><strong>İletişim</strong><p style="font-size: 0.9rem; color: #555;">info@gorseliseslendir.com</p></div>
         </div>
-        <div class="copyright">© 2024 Görmenin Ötesinde - İzmir.</div>
+        <div class="copyright">© 2024 Görmenin Ötesinde - İzmir. Tüm hakları saklıdır.</div>
     </footer>
 
 </body>
