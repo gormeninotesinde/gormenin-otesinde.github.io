@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gönüllü Ol | Görmenin Ötesinde</title>
     <style>
-        /* TEMEL AYARLAR */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: #000; color: #fff; line-height: 1.6; }
@@ -18,40 +17,45 @@
         .nav-links a { color: #888; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
         .nav-links a.active { color: #CCFF00; border-bottom: 2px solid #CCFF00; padding-bottom: 5px; }
 
-        /* KONTEYNER VE LAYOUT */
-        .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; }
-        .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
-
-        /* SOL TARAF: BİLGİLER */
-        .contact-info h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; }
+        /* KONTEYNER */
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
         .neon-divider { width: 60px; height: 4px; background: #CCFF00; margin-bottom: 30px; box-shadow: 0 0 10px #CCFF00; }
-        .info-item { margin-bottom: 30px; }
-        .info-item h3 { color: #CCFF00; margin-bottom: 5px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
-        .info-item p { font-size: 1.2rem; color: #fff; }
+        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 10px; }
+        h2 { font-size: 2rem; margin: 50px 0 20px; font-weight: 800; }
 
-        /* SAĞ TARAF: FORM */
-        .contact-card { background: #0a0a0a; border: 2px solid #CCFF00; padding: 40px; border-radius: 30px; box-shadow: 0 0 30px rgba(204, 255, 0, 0.05); }
+        /* GÖNÜLLÜLÜK ALANLARI (KARTLAR) */
+        .volunteer-areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        .area-card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 30px; border-radius: 20px; transition: 0.3s; }
+        .area-card:hover { border-color: #CCFF00; transform: translateY(-5px); }
+        .area-card h3 { color: #CCFF00; margin-bottom: 10px; }
+        .area-card p { color: #888; font-size: 0.9rem; }
+
+        /* FORM VE İLETİŞİM BÖLÜMÜ */
+        .contact-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; margin-top: 40px; }
+        .contact-card { background: #0a0a0a; border: 2px solid #CCFF00; padding: 40px; border-radius: 30px; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; color: #888; font-size: 0.9rem; }
         .form-group input, .form-group textarea { 
             width: 100%; padding: 15px; background: #111; border: 1px solid #333; 
-            border-radius: 12px; color: #fff; font-size: 1rem; transition: 0.3s;
+            border-radius: 12px; color: #fff; font-size: 1rem; 
         }
-        .form-group input:focus, .form-group textarea:focus { border-color: #CCFF00; outline: none; box-shadow: 0 0 10px rgba(204, 255, 0, 0.2); }
-        
         .submit-btn { 
             width: 100%; padding: 18px; background: #CCFF00; color: #000; border: none; 
-            border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; 
-            transition: 0.3s; box-shadow: 0 0 20px rgba(204, 255, 0, 0.3);
+            border-radius: 12px; font-weight: 800; cursor: pointer; transition: 0.3s;
         }
-        .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 0 40px #CCFF00; }
+        .submit-btn:hover { background: #fff; box-shadow: 0 0 30px #CCFF00; }
+
+        /* SIKÇA SORULAN SORULAR (SSS) */
+        .faq-section { margin-top: 80px; }
+        .faq-item { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 25px; border-radius: 15px; margin-bottom: 15px; }
+        .faq-item h3 { font-size: 1.1rem; color: #fff; margin-bottom: 10px; display: flex; align-items: center; }
+        .faq-item h3::before { content: "?"; color: #CCFF00; margin-right: 15px; font-weight: 800; }
+        .faq-item p { color: #888; font-size: 0.95rem; }
 
         /* FOOTER */
         footer { border-top: 1px solid #1a1a1a; padding: 60px 8%; margin-top: 80px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; }
         .copyright { text-align: center; color: #444; margin-top: 50px; padding-top: 20px; border-top: 1px solid #111; font-size: 0.8rem; }
-
-        @media (max-width: 768px) { .contact-wrapper { grid-template-columns: 1fr; } .contact-info h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
@@ -62,34 +66,53 @@
             <div><strong>Görmenin Ötesinde</strong></div>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Giriş Sayfası</a></li>
+            <li><a href="index.html">Giriş</a></li>
             <li><a href="hakkimizda.html">Hakkımızda</a></li>
             <li><a href="iceriklerimiz.html">İçeriklerimiz</a></li>
             <li><a href="iletisim.html" class="active">Gönüllü Ol</a></li>
         </ul>
     </nav>
 
-    <main class="container">
-        <div class="contact-wrapper">
-            
-            <div class="contact-info">
-                <h1>Bize Katılın</h1>
-                <div class="neon-divider"></div>
-                <p style="color: #888; margin-bottom: 40px;">İzmir'i herkes için erişilebilir kılma yolculuğumuzda bize destek olabilir, gönüllü ekibimize katılabilirsiniz.</p>
-                
-                <div class="info-item">
-                    <h3>E-Posta</h3>
-                    <p>info@gorseliseslendir.com</p>
-                </div>
-                
-                <div class="info-item">
-                    <h3>Konum</h3>
-                    <p>İzmir, Türkiye</p>
-                </div>
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 60px;">
+            <h1>Bize Katılın</h1>
+            <div class="neon-divider" style="margin: 0 auto;"></div>
+            <p style="color: #888;">İzmir'i birlikte daha erişilebilir bir şehir haline getirelim.</p>
+        </header>
 
-                <div class="info-item">
-                    <h3>Sosyal Medya</h3>
-                    <p style="color: #CCFF00; font-weight: 600;">@gorseliseslendir</p>
+        <h2>Gönüllülük Alanları</h2>
+        <div class="neon-divider"></div>
+        <div class="volunteer-areas">
+            <div class="area-card">
+                <h3>Saha Rehberliği</h3>
+                <p>Görme engelli arkadaşlarımıza şehir turlarında ve çekimlerde eşlik edin.</p>
+            </div>
+            <div class="area-card">
+                <h3>İçerik Üretimi</h3>
+                <p>Sesli betimleme metinleri yazın veya sosyal medya içeriklerimize destek olun.</p>
+            </div>
+            <div class="area-card">
+                <h3>Teknik Destek</h3>
+                <p>Video kurgusu, web sitesi yönetimi veya ses kayıt süreçlerinde yer alın.</p>
+            </div>
+            <div class="area-card">
+                <h3>Farkındalık Elçiliği</h3>
+                <p>Projemizi üniversitelerde ve sosyal platformlarda tanıtarak büyütmemize yardım edin.</p>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-text">
+                <h2>Başvuru Formu</h2>
+                <div class="neon-divider"></div>
+                <p style="color: #ccc; margin-bottom: 30px;">Aşağıdaki formu doldurarak ekibimize katılma isteğinizi iletebilirsiniz. En kısa sürede size dönüş yapacağız.</p>
+                
+                <div style="margin-top: 40px;">
+                    <p style="color: #CCFF00; font-weight: 800;">E-POSTA</p>
+                    <p>info@gorseliseslendir.com</p>
+                    <br>
+                    <p style="color: #CCFF00; font-weight: 800;">SOSYAL MEDYA</p>
+                    <p>@gorseliseslendir</p>
                 </div>
             </div>
 
@@ -97,41 +120,51 @@
                 <form>
                     <div class="form-group">
                         <label>Adınız Soyadınız</label>
-                        <input type="text" placeholder="Örn: Elif Yılmaz">
+                        <input type="text" placeholder="Ad Soyad">
                     </div>
                     <div class="form-group">
-                        <label>E-Posta Adresiniz</label>
-                        <input type="email" placeholder="email@adresiniz.com">
+                        <label>E-Posta</label>
+                        <input type="email" placeholder="ornek@mail.com">
                     </div>
                     <div class="form-group">
-                        <label>Nasıl Destek Olabilirsiniz?</label>
-                        <textarea rows="5" placeholder="Mesajınızı buraya yazın..."></textarea>
+                        <label>İlginizi Çeken Alan</label>
+                        <input type="text" placeholder="Örn: Saha Rehberliği">
                     </div>
-                    <button type="submit" class="submit-btn">GÖNDER</button>
+                    <div class="form-group">
+                        <label>Kısaca Kendinizden Bahsedin</label>
+                        <textarea rows="4" placeholder="Mesajınız..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">GÖNÜLLÜ OL</button>
                 </form>
             </div>
-
         </div>
-    </main>
+
+        <div class="faq-section">
+            <h2>Sıkça Sorulan Sorular</h2>
+            <div class="neon-divider"></div>
+            
+            <div class="faq-item">
+                <h3>Gönüllü olmak için bir yaş sınırı var mı?</h3>
+                <p>Hayır, projeye destek vermek isteyen her yaştan birey gönüllümüz olabilir.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Ne kadar zaman ayırmam gerekiyor?</h3>
+                <p>Gönüllülük süreçlerimiz esnektir. Kendi müsaitlik durumunuza göre projenin farklı aşamalarına destek verebilirsiniz.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Eğitim veriyor musunuz?</h3>
+                <p>Evet, özellikle saha rehberliği ve doğru iletişim teknikleri konusunda gönüllülerimize kısa bir oryantasyon eğitimi sağlıyoruz.</p>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-grid">
-            <div>
-                <strong style="display: block; margin-bottom: 10px;">Görmenin Ötesinde</strong>
-                <p style="font-size: 0.9rem; color: #888;">İzmir'de Görme Engelli Gençlerin Kent Deneyimi</p>
-            </div>
-            <div>
-                <strong>Sayfalar</strong>
-                <p style="font-size: 0.9rem; color: #555; margin-top: 10px;">Giriş Sayfası<br>Hakkımızda<br>İçeriklerimiz</p>
-            </div>
-            <div>
-                <strong>Bize Ulaşın</strong>
-                <p style="font-size: 0.9rem; color: #555; margin-top: 10px;">info@gorseliseslendir.com<br>İzmir, Türkiye</p>
-            </div>
+            <div><strong>Görmenin Ötesinde</strong><p style="color: #555;">İzmir Gönüllü Ağı</p></div>
+            <div><strong>Bağlantılar</strong><p style="color: #555;">Giriş Sayfası<br>İçeriklerimiz</p></div>
+            <div><strong>İletişim</strong><p style="color: #555;">info@gorseliseslendir.com</p></div>
         </div>
-        <div class="copyright">
-            © 2024 Görmenin Ötesinde - İzmir. Tüm hakları saklıdır.
-        </div>
+        <div class="copyright">© 2024 Görmenin Ötesinde - İzmir. Tüm hakları saklıdır.</div>
     </footer>
 
 </body>
