@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İçeriklerimiz | Görmenin Ötesinde</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* YENİ NEON RENK PALETİ VE TEMEL AYARLAR */
+        /* NEON RENK PALETİ VE TEMEL AYARLAR */
         :root {
             --bg-color: #f4f2eb;
             --text-color: #1a1a1a;
-            --accent-color: #e3fd01; /* Neon Yeşil */
+            --accent-color: #e3fd01; 
             --accent-dark: #b8cc00;
             --border-color: #e2e0d7;
             --card-bg: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
 
         /* NAVBAR */
         .navbar { 
@@ -30,24 +30,24 @@
         
         .logo-group { display: flex; align-items: center; gap: 15px; text-decoration: none; }
         .logo-group img { height: 50px; width: auto; border-radius: 10px; }
-        .logo-text { color: #1a1a1a; font-weight: 800; font-size: 1.1rem; }
+        .logo-text { color: #1a1a1a; font-weight: 900; font-size: 1.1rem; }
 
         .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { color: #666; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover, .nav-links a.active { color: #000; border-bottom: 2px solid var(--accent-color); }
+        .nav-links a { color: #666; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #000; border-bottom: 3px solid var(--accent-color); }
 
         /* KONTEYNER */
         .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        h1 { font-size: 3.5rem; font-weight: 800; text-align: center; margin-bottom: 10px; color: #1a1a1a; }
-        h2 { font-size: 2.2rem; margin: 60px 0 20px; font-weight: 800; color: #1a1a1a; border-left: 8px solid var(--accent-color); padding-left: 20px; }
-        .divider { width: 60px; height: 6px; background: var(--accent-color); margin-bottom: 30px; border-radius: 10px; }
+        h1 { font-size: 3.5rem; font-weight: 900; text-align: center; margin-bottom: 10px; color: #1a1a1a; }
+        h2 { font-size: 2.2rem; margin: 60px 0 20px; font-weight: 900; color: #1a1a1a; border-left: 10px solid var(--accent-color); padding-left: 20px; }
+        .divider { width: 80px; height: 8px; background: var(--accent-color); margin-bottom: 30px; border-radius: 10px; }
         .center-divider { margin: 20px auto 60px; }
 
         /* YOUTUBE ALANI */
         .video-main {
             width: 100%; aspect-ratio: 16/9; background: #000; 
             border: 1px solid var(--border-color);
-            border-radius: 30px; margin-bottom: 80px; overflow: hidden;
+            border-radius: 35px; margin-bottom: 80px; overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
@@ -58,7 +58,7 @@
             width: 100%;
             background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
             border-left: 10px solid var(--accent-color);
-            border-radius: 30px;
+            border-radius: 40px;
             padding: 50px;
             margin-bottom: 100px;
             transition: 0.4s;
@@ -66,51 +66,65 @@
             overflow: hidden;
         }
         .spotify-card:hover {
-            transform: scale(1.01) translateY(-5px);
-            box-shadow: 0 25px 50px rgba(227, 253, 1, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(227, 253, 1, 0.2);
         }
         .spotify-content { position: relative; z-index: 2; }
-        .spotify-card .tag { background: var(--accent-color); color: #000; padding: 6px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 20px; display: inline-block; }
-        .spotify-card h3 { font-size: 2.8rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
-        .spotify-card p { color: rgba(255,255,255,0.7); font-size: 1.1rem; }
+        .spotify-card .tag { background: var(--accent-color); color: #000; padding: 6px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: 800; margin-bottom: 20px; display: inline-block; }
+        .spotify-card h3 { font-size: 2.8rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
+        .spotify-card p { color: rgba(255,255,255,0.7); font-size: 1.1rem; font-weight: 500; }
         .spotify-icon { position: absolute; right: 50px; bottom: 20px; font-size: 6rem; opacity: 0.15; color: var(--accent-color); }
 
         /* BLOG KARTLARI */
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .blog-card { 
             background: var(--card-bg); border: 1px solid var(--border-color); 
-            padding: 40px; border-radius: 30px; display: flex; flex-direction: column; 
+            padding: 40px; border-radius: 40px; display: flex; flex-direction: column; 
             justify-content: space-between; transition: 0.4s; 
             border-bottom: 5px solid #eee;
         }
         .blog-card:hover { border-bottom-color: var(--accent-color); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-        .blog-tag { color: #000; background: var(--accent-color); padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; display: inline-block; width: fit-content; }
-        .blog-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color); font-weight: 800; }
-        .blog-card p { color: #666; margin-bottom: 30px; font-size: 0.95rem; }
+        .blog-tag { color: #000; background: var(--accent-color); padding: 5px 15px; border-radius: 10px; font-size: 0.75rem; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; display: inline-block; width: fit-content; }
+        .blog-card h3 { font-size: 1.6rem; margin-bottom: 15px; color: var(--text-color); font-weight: 900; line-height: 1.3; }
+        .blog-card p { color: #666; margin-bottom: 30px; font-size: 1rem; font-weight: 500; }
         
         .blog-footer { border-top: 1px solid #f0f0f0; padding-top: 25px; display: flex; justify-content: space-between; align-items: center; }
-        .author { font-size: 0.85rem; color: #999; font-weight: 600; }
-        .read-link { color: #000; text-decoration: none; font-weight: 800; transition: 0.3s; border-bottom: 2px solid var(--accent-color); }
-        .read-link:hover { letter-spacing: 1px; background: var(--accent-color); }
+        .author { font-size: 0.85rem; color: #999; font-weight: 700; }
+        .read-link { color: #000; text-decoration: none; font-weight: 900; transition: 0.3s; border-bottom: 3px solid var(--accent-color); padding-bottom: 2px; }
+        .read-link:hover { background: var(--accent-color); }
 
         /* FOOTER */
         footer { border-top: 1px solid var(--border-color); padding: 80px 8% 40px; background: #fff; margin-top: 100px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; }
-        
         .footer-logo-group { text-decoration: none; display: inline-block; margin-bottom: 15px; }
-        .footer-logo-group img { height: 40px; width: auto; margin-bottom: 10px; display: block; }
-        .footer-logo-text { font-weight: 800; color: #1a1a1a; font-size: 1.2rem; border-bottom: 4px solid var(--accent-color); }
-        
-        .footer-grid p { font-size: 0.9rem; color: #777; margin-top: 10px; }
-        .footer-grid strong { display: block; margin-bottom: 15px; color: var(--text-color); }
-        .copyright { text-align: center; color: #999; margin-top: 50px; padding-top: 25px; border-top: 1px solid #f0f0f0; font-size: 0.85rem; }
+        .footer-logo-group img { height: 45px; width: auto; margin-bottom: 10px; display: block; }
+        .footer-logo-text { font-weight: 900; color: #1a1a1a; font-size: 1.3rem; border-bottom: 4px solid var(--accent-color); }
+        footer p { font-size: 0.95rem; color: #777; margin-top: 15px; font-weight: 600; }
+        footer strong { display: block; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; }
+        .copyright { text-align: center; color: #aaa; margin-top: 60px; padding-top: 30px; border-top: 1px solid #f0f0f0; font-size: 0.9rem; font-weight: 500; }
+
+        /* MOBİL UYUMLULUK (RESPONSIVE) */
+        @media (max-width: 768px) {
+            .navbar { padding: 15px 5%; flex-direction: column; gap: 15px; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .container { padding: 40px 15px; }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; margin: 40px 0 15px; border-left-width: 6px; }
+            .spotify-card { padding: 30px 20px; border-radius: 30px; }
+            .spotify-card h3 { font-size: 1.8rem; }
+            .spotify-icon { font-size: 4rem; right: 20px; bottom: 10px; }
+            .blog-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .blog-card { padding: 30px 20px; }
+            footer { text-align: center; padding: 60px 5% 30px; }
+            .footer-logo-group, .footer-logo-text { margin: 0 auto; }
+        }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
         <a href="index.html" class="logo-group">
-            <img src="image_4.png" alt="Görmenin Ötesinde Logo">
+            <img src="logo.png" alt="Görmenin Ötesinde Logo">
             <div class="logo-text">Görmenin Ötesinde</div>
         </a>
         <ul class="nav-links">
@@ -133,7 +147,7 @@
         </div>
 
         <h2>Podcast Serisi</h2>
-        <a href="https://open.spotify.com/episode/37e9Khyx5Pw6UKAihs0Biv?si=LN8CMUniQrqTjmh_i1ZoIQ" target="_blank" class="spotify-card">
+        <a href="https://open.spotify.com" target="_blank" class="spotify-card">
             <div class="spotify-content">
                 <span class="tag"><i class="fab fa-spotify"></i> SPOTIFY</span>
                 <h3>Görmenin Ötesinde: Podcast</h3>
@@ -184,21 +198,22 @@
         <div class="footer-grid">
             <div>
                 <a href="index.html" class="footer-logo-group">
-                    <img src="image_4.png" alt="Görmenin Ötesinde Logo">
+                    <img src="logo.png" alt="Görmenin Ötesinde Logo">
                     <div class="footer-logo-text">Görmenin Ötesinde</div>
                 </a>
                 <p>İzmir Kent Deneyimi ve Erişilebilirlik Projesi</p>
+                <p style="color: var(--accent-dark); font-weight: 800; margin-top: 5px;">@gormeninotesinde</p>
             </div>
             <div>
-                <strong>Bağlantılar</strong>
+                <strong>Navigasyon</strong>
                 <p>
-                    <a href="hakkimizda.html" style="text-decoration:none; color:inherit;">Hakkımızda</a><br>
-                    <a href="iletisim.html" style="text-decoration:none; color:inherit; margin-top: 8px; display: inline-block;">Gönüllü Ol</a>
+                    <a href="hakkimizda.html" style="text-decoration:none; color:inherit; display:block; margin-bottom:10px;">Hakkımızda</a>
+                    <a href="iletisim.html" style="text-decoration:none; color:inherit;">Gönüllü Ol</a>
                 </p>
             </div>
             <div>
                 <strong>İletişim</strong>
-                <p>iletisim@gormeninotesinde.com<br>@gormeninotesinde</p>
+                <p>info@gorseliseslendir.com<br>@gormeninotesinde</p>
             </div>
         </div>
         <div class="copyright">
