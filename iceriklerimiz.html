@@ -19,19 +19,15 @@
 
         /* KONTEYNER */
         .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 10px; }
         h2 { font-size: 2.2rem; margin: 40px 0 20px; font-weight: 800; }
         .neon-divider { width: 60px; height: 4px; background: #CCFF00; margin-bottom: 30px; box-shadow: 0 0 10px #CCFF00; }
 
-        /* VİDEO ALANI */
+        /* VİDEO BÖLÜMÜ */
         .video-main {
-            width: 100%; 
-            aspect-ratio: 16/9; /* Videonun oranını korur */
-            background: #0a0a0a; 
-            border: 2px solid #CCFF00;
-            border-radius: 30px; 
-            margin-bottom: 40px; 
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(204, 255, 0, 0.2);
+            width: 100%; aspect-ratio: 16/9; background: #0a0a0a; border: 2px solid #CCFF00;
+            border-radius: 30px; margin-bottom: 40px; overflow: hidden;
+            box-shadow: 0 0 30px rgba(204, 255, 0, 0.1);
         }
 
         /* İÇERİK LİSTESİ */
@@ -46,21 +42,20 @@
         .view-btn { color: #888; text-decoration: none; font-size: 0.9rem; border: 1px solid #333; padding: 8px 16px; border-radius: 10px; transition: 0.3s; }
         .view-btn:hover { border-color: #CCFF00; color: #CCFF00; }
 
-        /* HARİTA ALANI */
-        .map-section {
-            position: relative; width: 100%; height: 500px;
-            background: #050505 url('https://gorseliseslendir.github.io/assets/images/izmir-harita.png') center/cover;
-            border-radius: 30px; border: 1px solid #222; margin-bottom: 40px; overflow: hidden;
+        /* BLOG KARTLARI */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .blog-card { 
+            background: #0a0a0a; border: 1px solid #1a1a1a; padding: 35px; border-radius: 25px; 
+            display: flex; flex-direction: column; justify-content: space-between; transition: 0.4s;
         }
-        .dot { position: absolute; width: 20px; height: 20px; background: #CCFF00; border-radius: 50%; box-shadow: 0 0 15px #CCFF00; }
-        .dot::after { content: ""; position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; border: 2px solid #CCFF00; border-radius: 50%; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { transform: scale(0.5); opacity: 1; } 100% { transform: scale(2); opacity: 0; } }
-
-        /* BÖLGE KARTLARI */
-        .regions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-        .region-card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 30px; border-radius: 20px; transition: 0.3s; }
-        .region-card:hover { border-color: #CCFF00; transform: translateY(-5px); }
-        .region-card h3 { color: #CCFF00; margin-bottom: 10px; }
+        .blog-card:hover { border-color: #CCFF00; transform: translateY(-10px); box-shadow: 0 10px 30px rgba(204, 255, 0, 0.1); }
+        .blog-tag { color: #CCFF00; font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 15px; }
+        .blog-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #fff; line-height: 1.3; }
+        .blog-card p { color: #888; font-size: 0.95rem; margin-bottom: 25px; }
+        .blog-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1a1a1a; padding-top: 20px; }
+        .author { font-size: 0.8rem; color: #555; }
+        .read-link { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+        .read-link:hover { color: #CCFF00; }
 
         /* FOOTER */
         footer { border-top: 1px solid #1a1a1a; padding: 60px 8%; margin-top: 80px; }
@@ -85,22 +80,19 @@
 
     <div class="container">
         <header style="text-align: center; margin-bottom: 60px;">
-            <h1 style="font-size: 3.5rem; font-weight: 800;">İçeriklerimiz</h1>
+            <h1>İçeriklerimiz</h1>
             <div class="neon-divider" style="margin: 0 auto;"></div>
-            <p style="color: #888;">İzmir'in seslerini ve deneyimlerini dijital ortamda keşfedin.</p>
+            <p style="color: #888;">İzmir’in erişilebilirliğini ve kent haklarını uzman kalemlerden okuyun.</p>
         </header>
 
         <h2>Proje Belgeseli</h2>
         <div class="neon-divider"></div>
         <div class="video-main">
             <iframe 
-                width="100%" 
-                height="100%" 
+                width="100%" height="100%" 
                 src="https://www.youtube.com/embed/VOPg_0yJGZo" 
                 title="Görmenin Ötesinde Belgeseli" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
+                frameborder="0" allowfullscreen>
             </iframe>
         </div>
 
@@ -127,30 +119,55 @@
             </div>
         </div>
 
-        <h2>Deneyim Haritası</h2>
+        <h2>Blog Yazılarımız</h2>
         <div class="neon-divider"></div>
-        <div class="map-section">
-            <div class="dot" style="top: 45%; left: 45%;"></div>
-            <div class="dot" style="top: 38%; left: 52%;"></div>
-            <div class="dot" style="top: 25%; left: 48%;"></div>
-            <div class="dot" style="top: 55%; left: 35%;"></div>
-        </div>
 
-        <div class="regions-grid">
-            <div class="region-card"><h3>Konak</h3><p>Tarihi doku ve erişilebilirlik.</p></div>
-            <div class="region-card"><h3>Alsancak</h3><p>Kordon ve sosyal yaşam.</p></div>
-            <div class="region-card"><h3>Karşıyaka</h3><p>Çarşı ve yaya yolları.</p></div>
-            <div class="region-card"><h3>Üçkuyular</h3><p>Ulaşım ve aktarma merkezleri.</p></div>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div>
+                    <span class="blog-tag">Erişilebilirlik</span>
+                    <h3>Bir kent ne zaman erişilebilir olur?</h3>
+                    <p>Kentte geçirilen sıradan bir günü düşünün. Bazıları için bu akış, sürekli tetikte olmayı ve hesap yapmayı gerektiriyor. Yaya yollarının düzensizliği aslında neyi ifade ediyor?</p>
+                </div>
+                <div class="blog-footer">
+                    <span class="author">Görmenin Ötesinde</span>
+                    <a href="#" class="read-link">OKU →</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div>
+                    <span class="blog-tag">Kent Hakkı</span>
+                    <h3>Bu Şehir Gerçekten Herkes İçin mi?</h3>
+                    <p>Özgürce hareket edebilmek ve bilgiye bağımsızca ulaşabilmek temel bir haktır. İzmir'de fiziksel ve dijital erişilebilirliğin mevcut durumunu mercek altına alıyoruz.</p>
+                </div>
+                <div class="blog-footer">
+                    <span class="author">Elif Şahin – İ. Ceylin Demircan</span>
+                    <a href="#" class="read-link">OKU →</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div>
+                    <span class="blog-tag">Dayanışma</span>
+                    <h3>Yerel Dayanışma ve Kent Hakkı</h3>
+                    <p>İzmir’de kapsayıcı bir şehir anlayışının güçlenmesinde yerel katılım mekanizmalarının ve sivil toplum iş birliğinin önemi nedir?</p>
+                </div>
+                <div class="blog-footer">
+                    <span class="author">Elif Şahin – İ. Ceylin Demircan</span>
+                    <a href="#" class="read-link">OKU →</a>
+                </div>
+            </div>
         </div>
     </div>
 
     <footer>
         <div class="footer-grid">
-            <div><strong>Görmenin Ötesinde</strong><p>İzmir</p></div>
-            <div><strong>Linkler</strong><p>Giriş<br>Hakkımızda</p></div>
-            <div><strong>İletişim</strong><p>info@gorseliseslendir.com</p></div>
+            <div><strong>Görmenin Ötesinde</strong><p style="color: #444;">İzmir Kent Deneyimi</p></div>
+            <div><strong>Linkler</strong><p style="color: #444;">Hakkımızda<br>Gönüllü Ol</p></div>
+            <div><strong>İletişim</strong><p style="color: #444;">info@gorseliseslendir.com</p></div>
         </div>
-        <div class="copyright">© 2024 Görmenin Ötesinde. Tüm hakları saklıdır.</div>
+        <div class="copyright">© 2024 Görmenin Ötesinde - İzmir. Tüm hakları saklıdır.</div>
     </footer>
 
 </body>
