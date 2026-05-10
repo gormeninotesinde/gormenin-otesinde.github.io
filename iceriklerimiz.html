@@ -4,69 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İçeriklerimiz | Görmenin Ötesinde</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+        /* YENİ RENK PALETİ VE TEMEL AYARLAR */
+        :root {
+            --bg-color: #f4f2eb;
+            --text-color: #1a1a1a;
+            --accent-color: #2d5a27;
+            --border-color: #e2e0d7;
+            --card-bg: #ffffff;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #000; color: #fff; line-height: 1.6; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
 
         /* NAVBAR */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #000; border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000; }
+        .navbar { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 20px 8%; background: var(--bg-color); 
+            border-bottom: 1px solid var(--border-color); 
+            position: sticky; top: 0; z-index: 1000; 
+        }
         .logo-group { display: flex; align-items: center; gap: 10px; }
-        .logo-circle { background: #CCFF00; color: #000; padding: 8px 12px; border-radius: 50%; font-weight: 800; }
+        .logo-circle { 
+            background: var(--accent-color); color: #fff; 
+            padding: 8px 12px; border-radius: 12px; font-weight: 800; 
+        }
         .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { color: #888; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-        .nav-links a.active { color: #CCFF00; border-bottom: 2px solid #CCFF00; padding-bottom: 5px; }
+        .nav-links a { color: #666; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a.active { color: var(--accent-color); }
 
         /* KONTEYNER */
         .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        h1 { font-size: 3.5rem; font-weight: 800; text-align: center; margin-bottom: 10px; }
-        h2 { font-size: 2.2rem; margin: 40px 0 20px; font-weight: 800; }
-        .neon-divider { width: 60px; height: 4px; background: #CCFF00; margin-bottom: 30px; box-shadow: 0 0 10px #CCFF00; }
-        .center-divider { margin: 0 auto 60px; }
+        h1 { font-size: 3.5rem; font-weight: 800; text-align: center; margin-bottom: 10px; color: var(--accent-color); }
+        h2 { font-size: 2.2rem; margin: 60px 0 20px; font-weight: 800; color: var(--accent-color); }
+        .divider { width: 60px; height: 4px; background: var(--accent-color); margin-bottom: 30px; border-radius: 10px; }
+        .center-divider { margin: 20px auto 60px; }
 
         /* YOUTUBE ALANI */
         .video-main {
-            width: 100%; aspect-ratio: 16/9; background: #0a0a0a; border: 2px solid #CCFF00;
-            border-radius: 30px; margin-bottom: 60px; overflow: hidden;
-            box-shadow: 0 0 30px rgba(204, 255, 0, 0.1);
+            width: 100%; aspect-ratio: 16/9; background: #000; 
+            border: 1px solid var(--border-color);
+            border-radius: 30px; margin-bottom: 80px; overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        /* SPOTIFY PODCAST KARTI (Düzeltilen Kısım) */
+        /* SPOTIFY PODCAST KARTI */
         .spotify-card {
             display: block;
             text-decoration: none;
             width: 100%;
-            background: linear-gradient(135deg, #1DB954 0%, #191414 100%);
-            border-radius: 25px;
-            padding: 40px;
-            margin-bottom: 80px;
+            background: linear-gradient(135deg, #2d5a27 0%, #1a3316 100%);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 100px;
             transition: 0.4s;
-            border: 1px solid rgba(255,255,255,0.1);
             position: relative;
             overflow: hidden;
         }
         .spotify-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 40px rgba(29, 185, 84, 0.3);
+            transform: scale(1.01) translateY(-5px);
+            box-shadow: 0 25px 50px rgba(45, 90, 39, 0.25);
         }
         .spotify-content { position: relative; z-index: 2; }
-        .spotify-card .tag { background: rgba(0,0,0,0.3); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; display: inline-block; }
-        .spotify-card h3 { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
-        .spotify-card p { color: rgba(255,255,255,0.8); font-weight: 600; }
-        .spotify-icon { position: absolute; right: 40px; bottom: 20px; font-size: 5rem; opacity: 0.2; color: #fff; }
+        .spotify-card .tag { background: rgba(255,255,255,0.2); color: #fff; padding: 6px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 20px; display: inline-block; }
+        .spotify-card h3 { font-size: 2.8rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+        .spotify-card p { color: rgba(255,255,255,0.9); font-size: 1.1rem; }
+        .spotify-icon { position: absolute; right: 50px; bottom: 20px; font-size: 6rem; opacity: 0.15; color: #fff; }
 
         /* BLOG KARTLARI */
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .blog-card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 35px; border-radius: 25px; display: flex; flex-direction: column; justify-content: space-between; transition: 0.4s; }
-        .blog-card:hover { border-color: #CCFF00; transform: translateY(-10px); }
-        .blog-tag { color: #CCFF00; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; }
-        .blog-footer { border-top: 1px solid #111; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .read-link { color: #fff; text-decoration: none; font-weight: 700; }
+        .blog-card { 
+            background: var(--card-bg); border: 1px solid var(--border-color); 
+            padding: 40px; border-radius: 30px; display: flex; flex-direction: column; 
+            justify-content: space-between; transition: 0.4s; 
+        }
+        .blog-card:hover { border-color: var(--accent-color); transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .blog-tag { color: var(--accent-color); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
+        .blog-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color); }
+        .blog-card p { color: #666; margin-bottom: 30px; }
+        
+        .blog-footer { border-top: 1px solid #f0f0f0; padding-top: 25px; display: flex; justify-content: space-between; align-items: center; }
+        .author { font-size: 0.85rem; color: #999; font-weight: 600; }
+        .read-link { color: var(--accent-color); text-decoration: none; font-weight: 800; transition: 0.3s; }
+        .read-link:hover { letter-spacing: 1px; }
 
         /* FOOTER */
-        footer { border-top: 1px solid #1a1a1a; padding: 60px 8%; margin-top: 80px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; }
-        .copyright { text-align: center; color: #444; margin-top: 50px; font-size: 0.8rem; }
+        footer { border-top: 1px solid var(--border-color); padding: 80px 8% 40px; background: #fff; margin-top: 100px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; }
+        .footer-logo { font-weight: 800; color: var(--accent-color); font-size: 1.2rem; }
+        .footer-grid p { font-size: 0.9rem; color: #777; margin-top: 10px; }
+        .footer-grid strong { display: block; margin-bottom: 15px; color: var(--text-color); }
+        .copyright { text-align: center; color: #999; margin-top: 50px; padding-top: 25px; border-top: 1px solid #f0f0f0; font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -74,7 +104,7 @@
     <nav class="navbar">
         <div class="logo-group">
             <span class="logo-circle">GÖ</span>
-            <div><strong>Görmenin Ötesinde</strong></div>
+            <div><strong style="color: var(--accent-color);">Görmenin Ötesinde</strong></div>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Giriş</a></li>
@@ -87,73 +117,61 @@
     <div class="container">
         <header>
             <h1>İçeriklerimiz</h1>
-            <div class="neon-divider center-divider"></div>
+            <div class="divider center-divider"></div>
         </header>
 
         <h2>Proje Belgeseli</h2>
-        <div class="neon-divider"></div>
+        <div class="divider"></div>
         <div class="video-main">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VOPg_0yJGZo" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <h2>Podcast Serisi</h2>
-        <div class="neon-divider"></div>
-        <a href="https://open.spotify.com/episode/37e9Khyx5Pw6UKAihs0Biv?si=6eJ8Pu5dS4yu8G5yReyC9A" target="_blank" class="spotify-card">
+        <div class="divider"></div>
+        <a href="https://open.spotify.com" target="_blank" class="spotify-card">
             <div class="spotify-content">
-                <span class="tag">SPOTIFY</span>
+                <span class="tag"><i class="fab fa-spotify"></i> SPOTIFY</span>
                 <h3>Görmenin Ötesinde: Podcast</h3>
-                <p>Yeni bölümleri dinlemek için tıklayın.</p>
+                <p>İzmir'den sesler ve erişilebilirlik hikayeleri. Yeni bölümleri dinlemek için tıklayın.</p>
             </div>
-            <div class="spotify-icon">🎙</div>
+            <div class="spotify-icon"><i class="fas fa-microphone-alt"></i></div>
         </a>
 
         <h2>Blog Yazılarımız</h2>
-        <div class="neon-divider"></div>
+        <div class="divider"></div>
         <div class="blog-grid">
             <div class="blog-card">
                 <div>
                     <span class="blog-tag">Erişilebilirlik</span>
                     <h3>Bir kent ne zaman erişilebilir olur?</h3>
-                    <p>Kentte geçirilen sıradan bir günü düşünün. Bazıları için bu akış hesap yapmayı gerektiriyor...</p>
+                    <p>Kentte geçirilen sıradan bir günü düşünün. Bazıları için bu akış, sürekli tetikte olmayı gerektiriyor...</p>
                 </div>
                 <div class="blog-footer">
                     <span class="author">Görmenin Ötesinde</span>
-                    <a href="yazi1.html" class="read-link">OKU →</a>
+                    <a href="yazi1.html" class="read-link">OKU <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="blog-card">
                 <div>
                     <span class="blog-tag">Kent Hakkı</span>
                     <h3>Bu Şehir Gerçekten Herkes İçin mi?</h3>
-                    <p>Özgürce hareket edebilmek ve bilgiye ulaşabilmek temel bir haktır. İzmir mercek altında.</p>
+                    <p>Özgürce hareket edebilmek ve bilgiye bağımsızca ulaşabilmek temel bir haktır. İzmir mercek altında.</p>
                 </div>
                 <div class="blog-footer">
                     <span class="author">Elif & İrem</span>
-                    <a href="yazi2.html" class="read-link">OKU →</a>
+                    <a href="yazi2.html" class="read-link">OKU <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="blog-card">
                 <div>
                     <span class="blog-tag">Dayanışma</span>
                     <h3>Yerel Dayanışma ve Kent Hakkı</h3>
-                    <p>İzmir’de kapsayıcı bir şehir anlayışında yerel katılımın ve sivil toplumun önemi.</p>
+                    <p>İzmir’de kapsayıcı bir şehir anlayışının güçlenmesinde yerel katılımın ve sivil toplumun rolü.</p>
                 </div>
                 <div class="blog-footer">
                     <span class="author">Elif & İrem</span>
-                    <a href="yazi3.html" class="read-link">OKU →</a>
+                    <a href="yazi3.html" class="read-link">OKU <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
-
-    <footer>
-        <div class="footer-grid">
-            <div><strong>Görmenin Ötesinde</strong><p>İzmir</p></div>
-            <div><strong>Linkler</strong><p>Anasayfa<br>Gönüllü Ol</p></div>
-            <div><strong>İletişim</strong><p>info@gorseliseslendir.com</p></div>
-        </div>
-        <div class="copyright">© 2024 Görmenin Ötesinde.</div>
-    </footer>
-
-</body>
-</html>
