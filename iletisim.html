@@ -4,60 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gönüllü Ol | Görmenin Ötesinde</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
-        /* TEMEL TASARIM */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #000; color: #fff; line-height: 1.6; }
+        /* YENİ RENK PALETİ VE TEMEL AYARLAR */
+        :root {
+            --bg-color: #f4f2eb;
+            --text-color: #1a1a1a;
+            --accent-color: #2d5a27;
+            --border-color: #e2e0d7;
+            --card-bg: #ffffff;
+        }
 
-        /* NAVBAR (SİTE GENELİYLE AYNI) */
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #000; border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 1000; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+
+        /* NAVBAR */
+        .navbar { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 20px 8%; background: var(--bg-color); 
+            border-bottom: 1px solid var(--border-color); 
+            position: sticky; top: 0; z-index: 1000; 
+        }
         .logo-group { display: flex; align-items: center; gap: 10px; }
-        .logo-circle { background: #CCFF00; color: #000; padding: 8px 12px; border-radius: 50%; font-weight: 800; }
+        .logo-circle { 
+            background: var(--accent-color); color: #fff; 
+            padding: 8px 12px; border-radius: 12px; font-weight: 800; 
+        }
         .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { color: #888; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-        .nav-links a.active { color: #CCFF00; border-bottom: 2px solid #CCFF00; padding-bottom: 5px; }
+        .nav-links a { color: #666; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-color); }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        .neon-divider { width: 60px; height: 4px; background: #CCFF00; margin-bottom: 30px; box-shadow: 0 0 10px #CCFF00; }
-        h1 { font-size: 3.5rem; font-weight: 800; }
-        h2 { font-size: 2.2rem; margin: 60px 0 20px; font-weight: 800; }
+        .divider { width: 60px; height: 4px; background: var(--accent-color); margin-bottom: 30px; border-radius: 10px; }
+        h1 { font-size: 3.5rem; font-weight: 800; color: var(--accent-color); }
+        h2 { font-size: 2.2rem; margin: 60px 0 20px; font-weight: 800; color: var(--accent-color); }
 
-        /* 1. GÖNÜLLÜLÜK ALANLARI KISMI */
-        .volunteer-intro { margin-bottom: 40px; color: #888; font-size: 1.2rem; }
+        /* GÖNÜLLÜLÜK ALANLARI */
+        .volunteer-intro { margin-bottom: 40px; color: #666; font-size: 1.2rem; }
         .areas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 80px; }
-        .area-card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 35px; border-radius: 20px; transition: 0.4s; border-left: 4px solid #CCFF00; }
-        .area-card:hover { border-color: #CCFF00; transform: translateY(-10px); box-shadow: 0 10px 30px rgba(204, 255, 0, 0.1); }
-        .area-card h3 { color: #CCFF00; margin-bottom: 15px; font-size: 1.3rem; }
-        .area-card p { color: #ccc; font-size: 0.95rem; }
-
-        /* 2. FORM VE İLETİŞİM BİLGİLERİ KISMI */
-        .main-contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
-        .contact-details .detail-box { margin-bottom: 40px; }
-        .detail-box h4 { color: #CCFF00; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; }
-        .detail-box p { font-size: 1.3rem; font-weight: 600; }
-
-        .form-card { background: #0a0a0a; border: 2px solid #CCFF00; padding: 40px; border-radius: 30px; box-shadow: 0 0 40px rgba(204, 255, 0, 0.05); }
-        .input-group { margin-bottom: 25px; }
-        .input-group label { display: block; margin-bottom: 10px; color: #888; font-size: 0.9rem; }
-        .input-group input, .input-group textarea, .input-group select { 
-            width: 100%; padding: 15px; background: #111; border: 1px solid #333; border-radius: 12px; color: #fff; font-size: 1rem; 
+        .area-card { 
+            background: var(--card-bg); border: 1px solid var(--border-color); 
+            padding: 35px; border-radius: 25px; transition: 0.4s; 
+            border-left: 6px solid var(--accent-color); 
         }
-        .input-group input:focus { border-color: #CCFF00; outline: none; }
-        .submit-btn { width: 100%; padding: 20px; background: #CCFF00; color: #000; border: none; border-radius: 12px; font-weight: 800; font-size: 1.1rem; cursor: pointer; transition: 0.3s; }
-        .submit-btn:hover { background: #fff; transform: scale(1.02); }
+        .area-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .area-card h3 { color: var(--accent-color); margin-bottom: 15px; font-size: 1.3rem; font-weight: 800; }
+        .area-card p { color: #555; font-size: 0.95rem; }
 
-        /* 3. SIKÇA SORULAN SORULAR KISMI */
+        /* FORM VE İLETİŞİM */
+        .main-contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
+        .detail-box { margin-bottom: 40px; }
+        .detail-box h4 { color: var(--accent-color); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 10px; font-weight: 800; }
+        .detail-box p { font-size: 1.3rem; font-weight: 700; color: var(--text-color); }
+
+        .form-card { 
+            background: var(--card-bg); border: 1px solid var(--border-color); 
+            padding: 50px; border-radius: 35px; box-shadow: 0 20px 40px rgba(0,0,0,0.03); 
+        }
+        .input-group { margin-bottom: 25px; }
+        .input-group label { display: block; margin-bottom: 10px; color: #666; font-size: 0.9rem; font-weight: 600; }
+        .input-group input, .input-group textarea, .input-group select { 
+            width: 100%; padding: 15px; background: #fafafa; border: 1px solid var(--border-color); 
+            border-radius: 15px; color: var(--text-color); font-size: 1rem; transition: 0.3s;
+        }
+        .input-group input:focus, .input-group textarea:focus { border-color: var(--accent-color); outline: none; background: #fff; }
+        
+        .submit-btn { 
+            width: 100%; padding: 20px; background: var(--accent-color); color: #fff; 
+            border: none; border-radius: 15px; font-weight: 800; font-size: 1.1rem; 
+            cursor: pointer; transition: 0.3s; box-shadow: 0 10px 20px rgba(45, 90, 39, 0.2);
+        }
+        .submit-btn:hover { background: #1a3316; transform: translateY(-2px); }
+
+        /* SIKÇA SORULAN SORULAR */
         .faq-wrapper { margin-top: 100px; margin-bottom: 60px; }
-        .faq-item { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 30px; border-radius: 20px; margin-bottom: 20px; }
-        .faq-item h3 { color: #CCFF00; font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; }
-        .faq-item h3::before { content: "Q."; color: #fff; }
-        .faq-item p { color: #888; padding-left: 35px; }
+        .faq-item { background: var(--card-bg); border: 1px solid var(--border-color); padding: 35px; border-radius: 25px; margin-bottom: 25px; }
+        .faq-item h3 { color: var(--accent-color); font-size: 1.25rem; margin-bottom: 15px; display: flex; align-items: flex-start; gap: 15px; font-weight: 800; }
+        .faq-item h3 i { margin-top: 5px; font-size: 1rem; }
+        .faq-item p { color: #666; padding-left: 30px; font-size: 1rem; }
 
         /* FOOTER */
-        footer { border-top: 1px solid #1a1a1a; padding: 60px 8%; margin-top: 80px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; }
-        .copyright { text-align: center; color: #444; margin-top: 50px; padding-top: 20px; border-top: 1px solid #111; font-size: 0.8rem; }
+        footer { border-top: 1px solid var(--border-color); padding: 80px 8% 40px; background: #fff; margin-top: 100px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; }
+        .footer-logo { font-weight: 800; color: var(--accent-color); font-size: 1.2rem; }
+        .copyright { text-align: center; color: #999; margin-top: 50px; padding-top: 25px; border-top: 1px solid #f0f0f0; font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -65,7 +96,7 @@
     <nav class="navbar">
         <div class="logo-group">
             <span class="logo-circle">GÖ</span>
-            <div><strong>Görmenin Ötesinde</strong></div>
+            <div><strong style="color: var(--accent-color);">Görmenin Ötesinde</strong></div>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Giriş</a></li>
@@ -78,36 +109,36 @@
     <div class="container">
         <header style="text-align: center; margin-bottom: 60px;">
             <h1>Gönüllü Ol</h1>
-            <div class="neon-divider" style="margin: 0 auto;"></div>
-            <p class="volunteer-intro">İzmir'i herkes için erişilebilir kılma yolculuğumuzda bize katılın.</p>
+            <div class="divider" style="margin: 20px auto;"></div>
+            <p class="volunteer-intro">İzmir'i herkes için daha erişilebilir kılma yolculuğumuzda bize katılın.</p>
         </header>
 
         <h2>Gönüllülük Alanları</h2>
-        <div class="neon-divider"></div>
+        <div class="divider"></div>
         <div class="areas-grid">
             <div class="area-card">
                 <h3>Saha Rehberliği</h3>
-                <p>Görme engelli arkadaşlarımıza şehir keşiflerinde eşlik ederek güvenli bir deneyim sunun.</p>
+                <p>Görme engelli bireylere şehir keşiflerinde ve etkinliklerde eşlik ederek güvenli bir deneyim sunun.</p>
             </div>
             <div class="area-card">
                 <h3>Sesli Betimleme</h3>
-                <p>Görsel içerikleri, videoları ve mekanları detaylıca yazıya dökerek dünyayı seslendirin.</p>
+                <p>Görsel içerikleri, videoları ve mekanları detaylıca yazıya dökerek dünyayı seslendirmemize yardımcı olun.</p>
             </div>
             <div class="area-card">
                 <h3>Dijital Destek</h3>
-                <p>Sosyal medya yönetimi, video kurgusu veya teknik altyapıda uzmanlığınızı paylaşın.</p>
+                <p>Sosyal medya içerik üretimi, video kurgusu veya web yönetimi alanında uzmanlığınızı paylaşın.</p>
             </div>
             <div class="area-card">
                 <h3>Organizasyon</h3>
-                <p>Etkinlik planlama, atölye çalışmaları ve farkındalık toplantılarında görev alın.</p>
+                <p>Etkinlik planlama, saha araştırmaları ve farkındalık atölyelerinde aktif görev alın.</p>
             </div>
         </div>
 
         <div class="main-contact-wrapper">
             <div class="contact-details">
                 <h2>Bize Ulaşın</h2>
-                <div class="neon-divider"></div>
-                <p style="color: #888; margin-bottom: 40px;">Sorularınız veya iş birliği önerileriniz için formdaki bilgilerden veya doğrudan e-posta adresimizden bize ulaşabilirsiniz.</p>
+                <div class="divider"></div>
+                <p style="color: #666; margin-bottom: 40px; font-size: 1.1rem;">Sorularınız, iş birliği önerileriniz veya destek talepleriniz için bize her zaman yazabilirsiniz.</p>
                 
                 <div class="detail-box">
                     <h4>E-Posta Adresimiz</h4>
@@ -115,7 +146,7 @@
                 </div>
                 <div class="detail-box">
                     <h4>Sosyal Medya</h4>
-                    <p>@gorseliseslendir</p>
+                    <p>@gorselseslendir</p>
                 </div>
                 <div class="detail-box">
                     <h4>Lokasyon</h4>
@@ -127,7 +158,7 @@
                 <form>
                     <div class="input-group">
                         <label>Adınız Soyadınız *</label>
-                        <input type="text" required placeholder="Ad Soyad">
+                        <input type="text" required placeholder="Örn: Elif Şahin">
                     </div>
                     <div class="input-group">
                         <label>E-Posta Adresiniz *</label>
@@ -144,7 +175,7 @@
                     </div>
                     <div class="input-group">
                         <label>Mesajınız veya Motivasyonunuz</label>
-                        <textarea rows="5" placeholder="Bize biraz kendinizden bahsedin..."></textarea>
+                        <textarea rows="4" placeholder="Neden ekibimize katılmak istiyorsunuz?"></textarea>
                     </div>
                     <button type="submit" class="submit-btn">BAŞVURUYU GÖNDER</button>
                 </form>
@@ -153,30 +184,44 @@
 
         <div class="faq-wrapper">
             <h2>Sıkça Sorulan Sorular</h2>
-            <div class="neon-divider"></div>
+            <div class="divider"></div>
             
             <div class="faq-item">
-                <h3>Gönüllü olmak için bir eğitim almam gerekiyor mu?</h3>
-                <p>Hayır. Seçtiğiniz alana göre size gerekli oryantasyon ve "Doğru İletişim Teknikleri" eğitimi ekip arkadaşlarımız tarafından verilecektir.</p>
+                <h3><i class="fas fa-question-circle"></i> Gönüllü olmak için bir eğitim almam gerekiyor mu?</h3>
+                <p>Seçtiğiniz alana göre ekibimiz tarafından size temel bir oryantasyon ve "Engellilikle İlgili Doğru İletişim Teknikleri" eğitimi sağlanacaktır.</p>
             </div>
             <div class="faq-item">
-                <h3>Ne kadar zaman ayırmalıyım?</h3>
-                <p>Tamamen esnek. Haftada 1 saat de olsa, sadece belirli etkinliklerde de olsa desteğiniz bizim için çok değerli.</p>
+                <h3><i class="fas fa-question-circle"></i> Ne kadar zaman ayırmalıyım?</h3>
+                <p>Süreci tamamen sizin uygunluğunuza göre planlıyoruz. Haftada birkaç saat veya sadece belirli etkinlik bazlı destek verebilirsiniz.</p>
             </div>
             <div class="faq-item">
-                <h3>Kimler gönüllü olabilir?</h3>
-                <p>İzmir'de yaşayan veya uzaktan dijital destek verebilecek, kapsayıcılığa inanan herkes gönüllümüz olabilir.</p>
+                <h3><i class="fas fa-question-circle"></i> İzmir dışında yaşıyorum, gönüllü olabilir miyim?</h3>
+                <p>Evet! Sesli betimleme ve dijital destek gibi alanlarda uzaktan (online) katılım sağlayarak projemize güç katabilirsiniz.</p>
             </div>
         </div>
     </div>
 
     <footer>
         <div class="footer-grid">
-            <div><strong>Görmenin Ötesinde</strong><p style="color: #444;">İzmir Kent Deneyimi</p></div>
-            <div><strong>Hızlı Bağlantılar</strong><p style="color: #444;">Hakkımızda<br>İçeriklerimiz</p></div>
-            <div><strong>İletişim</strong><p style="color: #444;">info@gorseliseslendir.com</p></div>
+            <div>
+                <strong class="footer-logo">Görmenin Ötesinde</strong>
+                <p style="color: #777; margin-top: 10px; font-size: 0.9rem;">İzmir Kent Deneyimi ve Erişilebilirlik Projesi</p>
+            </div>
+            <div>
+                <strong style="display: block; margin-bottom: 15px;">Bağlantılar</strong>
+                <p style="font-size: 0.9rem; color: #777;">
+                    <a href="hakkimizda.html" style="text-decoration:none; color:inherit;">Hakkımızda</a><br>
+                    <a href="iceriklerimiz.html" style="text-decoration:none; color:inherit; margin-top: 8px; display: inline-block;">İçeriklerimiz</a>
+                </p>
+            </div>
+            <div>
+                <strong style="display: block; margin-bottom: 15px;">İletişim</strong>
+                <p style="font-size: 0.9rem; color: #777;">info@gorseliseslendir.com<br>@gorselseslendir</p>
+            </div>
         </div>
-        <div class="copyright">© 2024 Görmenin Ötesinde - İzmir. Tüm hakları saklıdır.</div>
+        <div class="copyright">
+            © 2024 Görmenin Ötesinde - İzmir. Tüm hakları saklıdır.
+        </div>
     </footer>
 
 </body>
