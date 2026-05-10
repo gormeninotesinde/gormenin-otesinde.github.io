@@ -24,43 +24,49 @@
         .neon-divider { width: 60px; height: 4px; background: #CCFF00; margin-bottom: 30px; box-shadow: 0 0 10px #CCFF00; }
         .center-divider { margin: 0 auto 60px; }
 
-        /* 1. BÖLÜM: YOUTUBE VİDEO */
+        /* YOUTUBE ALANI */
         .video-main {
             width: 100%; aspect-ratio: 16/9; background: #0a0a0a; border: 2px solid #CCFF00;
             border-radius: 30px; margin-bottom: 60px; overflow: hidden;
             box-shadow: 0 0 30px rgba(204, 255, 0, 0.1);
         }
 
-        /* 2. BÖLÜM: SPOTIFY */
-        .spotify-container {
+        /* SPOTIFY PODCAST KARTI (Düzeltilen Kısım) */
+        .spotify-card {
+            display: block;
+            text-decoration: none;
             width: 100%;
+            background: linear-gradient(135deg, #1DB954 0%, #191414 100%);
+            border-radius: 25px;
+            padding: 40px;
             margin-bottom: 80px;
-            border-radius: 20px;
+            transition: 0.4s;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
             overflow: hidden;
-            background: #121212;
-            border: 1px solid #282828;
-            box-shadow: 0 0 20px rgba(29, 185, 84, 0.1); /* Hafif Spotify yeşili parlaması */
         }
+        .spotify-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 40px rgba(29, 185, 84, 0.3);
+        }
+        .spotify-content { position: relative; z-index: 2; }
+        .spotify-card .tag { background: rgba(0,0,0,0.3); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 15px; display: inline-block; }
+        .spotify-card h3 { font-size: 2.5rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+        .spotify-card p { color: rgba(255,255,255,0.8); font-weight: 600; }
+        .spotify-icon { position: absolute; right: 40px; bottom: 20px; font-size: 5rem; opacity: 0.2; color: #fff; }
 
-        /* 3. BÖLÜM: BLOG KARTLARI */
-        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
-        .blog-card { 
-            background: #0a0a0a; border: 1px solid #1a1a1a; padding: 35px; border-radius: 25px; 
-            display: flex; flex-direction: column; justify-content: space-between; transition: 0.4s;
-        }
-        .blog-card:hover { border-color: #CCFF00; transform: translateY(-10px); box-shadow: 0 10px 30px rgba(204, 255, 0, 0.1); }
-        .blog-tag { color: #CCFF00; font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 15px; }
-        .blog-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: #fff; line-height: 1.3; }
-        .blog-card p { color: #888; font-size: 0.95rem; margin-bottom: 25px; }
-        .blog-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #111; padding-top: 20px; }
-        .author { font-size: 0.8rem; color: #555; }
-        .read-link { color: #fff; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: 0.3s; border-bottom: 1px solid transparent; }
-        .read-link:hover { color: #CCFF00; border-bottom: 1px solid #CCFF00; }
+        /* BLOG KARTLARI */
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .blog-card { background: #0a0a0a; border: 1px solid #1a1a1a; padding: 35px; border-radius: 25px; display: flex; flex-direction: column; justify-content: space-between; transition: 0.4s; }
+        .blog-card:hover { border-color: #CCFF00; transform: translateY(-10px); }
+        .blog-tag { color: #CCFF00; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 15px; }
+        .blog-footer { border-top: 1px solid #111; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .read-link { color: #fff; text-decoration: none; font-weight: 700; }
 
         /* FOOTER */
         footer { border-top: 1px solid #1a1a1a; padding: 60px 8%; margin-top: 80px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; }
-        .copyright { text-align: center; color: #444; margin-top: 50px; padding-top: 20px; border-top: 1px solid #111; font-size: 0.8rem; }
+        .copyright { text-align: center; color: #444; margin-top: 50px; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -87,65 +93,53 @@
         <h2>Proje Belgeseli</h2>
         <div class="neon-divider"></div>
         <div class="video-main">
-            <iframe 
-                width="100%" height="100%" 
-                src="https://www.youtube.com/embed/VOPg_0yJGZo" 
-                title="Görmenin Ötesinde Belgeseli" 
-                frameborder="0" allowfullscreen>
-            </iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VOPg_0yJGZo" frameborder="0" allowfullscreen></iframe>
         </div>
 
-        <h2>Sesli Betimlemeler & Podcast</h2>
+        <h2>Podcast Serisi</h2>
         <div class="neon-divider"></div>
-        <div class="spotify-container">
-            <iframe 
-                style="border-radius:12px" 
-                src="https://open.spotify.com/episode/37e9Khyx5Pw6UKAihs0Biv?si=6eJ8Pu5dS4yu8G5yReyC9A" 
-                width="100%" 
-                height="352" 
-                frameBorder="0" 
-                allowfullscreen="" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                loading="lazy">
-            </iframe>
-        </div>
+        <a href="https://open.spotify.com/episode/37e9Khyx5Pw6UKAihs0Biv?si=6eJ8Pu5dS4yu8G5yReyC9A" target="_blank" class="spotify-card">
+            <div class="spotify-content">
+                <span class="tag">SPOTIFY</span>
+                <h3>Görmenin Ötesinde: Podcast</h3>
+                <p>Yeni bölümleri dinlemek için tıklayın.</p>
+            </div>
+            <div class="spotify-icon">🎙</div>
+        </a>
 
         <h2>Blog Yazılarımız</h2>
         <div class="neon-divider"></div>
-
         <div class="blog-grid">
             <div class="blog-card">
                 <div>
                     <span class="blog-tag">Erişilebilirlik</span>
                     <h3>Bir kent ne zaman erişilebilir olur?</h3>
-                    <p>Kentte geçirilen sıradan bir günü düşünün. Bazıları için bu akış, sürekli tetikte olmayı, hesap yapmayı gerektiriyor...</p>
+                    <p>Kentte geçirilen sıradan bir günü düşünün. Bazıları için bu akış hesap yapmayı gerektiriyor...</p>
                 </div>
                 <div class="blog-footer">
                     <span class="author">Görmenin Ötesinde</span>
                     <a href="yazi1.html" class="read-link">OKU →</a>
                 </div>
             </div>
-
             <div class="blog-card">
                 <div>
                     <span class="blog-tag">Kent Hakkı</span>
                     <h3>Bu Şehir Gerçekten Herkes İçin mi?</h3>
-                    <p>Özgürce hareket edebilmek ve bilgiye bağımsızca ulaşabilmek temel bir haktır. İzmir mercek altında.</p>
+                    <p>Özgürce hareket edebilmek ve bilgiye ulaşabilmek temel bir haktır. İzmir mercek altında.</p>
                 </div>
                 <div class="blog-footer">
-                    <span class="author">Elif Şahin – İrem Ceylin Demircan</span>
+                    <span class="author">Elif & İrem</span>
                     <a href="yazi2.html" class="read-link">OKU →</a>
                 </div>
             </div>
-
             <div class="blog-card">
                 <div>
                     <span class="blog-tag">Dayanışma</span>
                     <h3>Yerel Dayanışma ve Kent Hakkı</h3>
-                    <p>İzmir’de kapsayıcı bir şehir anlayışının güçlenmesinde yerel katılımın ve sivil toplumun önemi.</p>
+                    <p>İzmir’de kapsayıcı bir şehir anlayışında yerel katılımın ve sivil toplumun önemi.</p>
                 </div>
                 <div class="blog-footer">
-                    <span class="author">Elif Şahin – İrem Ceylin Demircan</span>
+                    <span class="author">Elif & İrem</span>
                     <a href="yazi3.html" class="read-link">OKU →</a>
                 </div>
             </div>
@@ -154,11 +148,11 @@
 
     <footer>
         <div class="footer-grid">
-            <div><strong>Görmenin Ötesinde</strong><p style="color: #444;">İzmir Kent Deneyimi</p></div>
-            <div><strong>Linkler</strong><p style="color: #444;">Anasayfa<br>Gönüllü Ol</p></div>
-            <div><strong>İletişim</strong><p style="color: #444;">info@gorseliseslendir.com</p></div>
+            <div><strong>Görmenin Ötesinde</strong><p>İzmir</p></div>
+            <div><strong>Linkler</strong><p>Anasayfa<br>Gönüllü Ol</p></div>
+            <div><strong>İletişim</strong><p>info@gorseliseslendir.com</p></div>
         </div>
-        <div class="copyright">© 2024 Görmenin Ötesinde - İzmir. Tüm hakları saklıdır.</div>
+        <div class="copyright">© 2024 Görmenin Ötesinde.</div>
     </footer>
 
 </body>
