@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Görmenin Ötesinde | Giriş</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* YENİ NEON RENK PALETİ VE TEMEL AYARLAR */
         :root {
             --bg-color: #f4f2eb;      
             --text-color: #1a1a1a;    
-            --accent-color: #e3fd01;  /* Neon Yeşil */
+            --accent-color: #e3fd01;  
             --accent-dark: #b8cc00;
             --border-color: #e2e0d7;  
             --card-bg: #ffffff;       
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
 
         /* HEADER & NAVBAR */
         header {
@@ -30,32 +29,32 @@
         
         .logo-area { display: flex; align-items: center; gap: 15px; text-decoration: none; }
         .logo-area img { height: 50px; width: auto; border-radius: 10px; }
-        .logo-text h1 { font-size: 1.3rem; font-weight: 900; color: #1a1a1a; margin-bottom: -5px; }
-        .logo-text span { font-size: 0.8rem; color: #888; font-weight: 600; }
+        .logo-text h1 { font-size: 1.1rem; font-weight: 900; color: #1a1a1a; margin-bottom: -2px; }
+        .logo-text span { font-size: 0.8rem; color: #888; font-weight: 700; }
 
-        nav ul { display: flex; list-style: none; gap: 25px; }
-        nav a { text-decoration: none; color: #666; font-weight: 700; font-size: 0.95rem; transition: 0.3s; }
+        nav ul { display: flex; list-style: none; gap: 30px; }
+        nav a { text-decoration: none; color: #666; font-weight: 700; font-size: 0.9rem; transition: 0.3s; }
         nav a:hover, nav a.active { color: #000; border-bottom: 3px solid var(--accent-color); }
 
         /* HERO SECTION */
         .hero {
-            height: 75vh; display: flex; flex-direction: column;
+            height: 80vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
             padding: 0 20px;
         }
-        .hero h2 { font-size: 5rem; font-weight: 900; color: #1a1a1a; line-height: 1; letter-spacing: -2px; }
+        .hero h2 { font-size: 5rem; font-weight: 900; color: #1a1a1a; line-height: 1; letter-spacing: -3px; }
         .hero-line { width: 100px; height: 8px; background: var(--accent-color); margin: 30px 0; border-radius: 10px; }
-        .hero p { font-size: 1.5rem; color: #444; max-width: 650px; margin-bottom: 45px; font-weight: 500; }
+        .hero p { font-size: 1.5rem; color: #444; max-width: 650px; margin-bottom: 45px; font-weight: 700; }
 
         /* BUTONLAR */
         .btn-neon {
             background: var(--accent-color); color: #000;
-            padding: 20px 45px; border-radius: 15px;
+            padding: 22px 45px; border-radius: 20px;
             text-decoration: none; font-weight: 900; font-size: 1.1rem;
-            transition: 0.3s; display: inline-flex; align-items: center; gap: 12px;
-            box-shadow: 0 10px 20px rgba(227, 253, 1, 0.3);
+            transition: 0.4s; display: inline-flex; align-items: center; gap: 12px;
+            box-shadow: 0 10px 25px rgba(227, 253, 1, 0.4);
         }
-        .btn-neon:hover { transform: translateY(-5px); background: var(--accent-dark); box-shadow: 0 15px 30px rgba(227, 253, 1, 0.4); }
+        .btn-neon:hover { transform: translateY(-5px); background: var(--accent-dark); box-shadow: 0 15px 35px rgba(227, 253, 1, 0.5); }
 
         /* KARTLAR */
         .info-section {
@@ -63,14 +62,14 @@
             gap: 40px; padding: 100px 8%;
         }
         .card {
-            background: var(--card-bg); padding: 50px; border-radius: 35px;
+            background: var(--card-bg); padding: 50px; border-radius: 40px;
             border: 1px solid var(--border-color); transition: 0.4s;
-            border-bottom: 6px solid var(--accent-color);
+            border-bottom: 6px solid #eee;
         }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.06); }
+        .card:hover { transform: translateY(-10px); border-bottom-color: var(--accent-color); box-shadow: 0 25px 50px rgba(0,0,0,0.05); }
         .card .icon { font-size: 3rem; color: #000; margin-bottom: 25px; }
         .card h3 { font-size: 1.8rem; margin-bottom: 20px; color: #1a1a1a; font-weight: 900; }
-        .card p { color: #555; font-size: 1rem; margin-bottom: 25px; }
+        .card p { color: #555; font-size: 1.1rem; margin-bottom: 25px; font-weight: 500; }
 
         /* JOIN US */
         .join-us {
@@ -83,27 +82,44 @@
         footer { padding: 100px 8% 40px; background: #fff; border-top: 1px solid var(--border-color); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
         
-        .footer-logo img { height: 45px; width: auto; margin-bottom: 20px; }
-        .footer-logo h2 { font-size: 1.6rem; font-weight: 900; line-height: 1.1; color: #1a1a1a; }
-        .footer-logo p { color: #888; font-weight: 700; margin-top: 10px; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+        .footer-logo img { height: 45px; width: auto; margin-bottom: 15px; display: block;}
+        .footer-logo h2 { font-size: 1.3rem; font-weight: 900; line-height: 1.1; color: #1a1a1a; display: block; border-bottom: 4px solid var(--accent-color); width: fit-content; }
+        .footer-logo p { color: #777; font-weight: 700; margin-top: 15px; font-size: 0.95rem; }
         
         .footer-links h4, .footer-social h4 { margin-bottom: 25px; font-weight: 900; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
         .footer-links ul { list-style: none; }
-        .footer-links a { text-decoration: none; color: #666; font-size: 1rem; display: block; margin-bottom: 12px; transition: 0.3s; font-weight: 600; }
+        .footer-links a { text-decoration: none; color: #666; font-size: 1rem; display: block; margin-bottom: 12px; transition: 0.3s; font-weight: 700; }
         .footer-links a:hover { color: #000; padding-left: 5px; }
         
-        .social-icons { display: flex; gap: 20px; }
-        .social-icons a { font-size: 1.8rem; color: #1a1a1a; transition: 0.3s; }
-        .social-icons a:hover { color: var(--accent-dark); transform: scale(1.2); }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icons a { 
+            width: 50px; height: 50px; background: #f9f9f9; border: 1px solid var(--border-color); border-radius: 15px; 
+            display: flex; align-items: center; justify-content: center; color: #1a1a1a; transition: 0.4s; font-size: 1.3rem;
+        }
+        .social-icons a:hover { background: var(--accent-color); border-color: var(--accent-color); transform: scale(1.1) rotate(5deg); }
 
-        .copyright { text-align: center; padding-top: 40px; border-top: 1px solid #f0f0f0; color: #aaa; font-size: 0.9rem; font-weight: 500; }
+        .copyright { text-align: center; padding-top: 40px; border-top: 1px solid #f0f0f0; color: #aaa; font-size: 0.9rem; font-weight: 600; }
+
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 768px) {
+            header { padding: 15px 5%; flex-direction: column; gap: 15px; }
+            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .hero h2 { font-size: 2.8rem; letter-spacing: -1px; }
+            .hero p { font-size: 1.1rem; }
+            .info-section { padding: 60px 5%; }
+            .card { padding: 35px 25px; }
+            .join-us h2 { font-size: 2.2rem; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .footer-logo h2, .social-icons { margin-left: auto; margin-right: auto; justify-content: center; }
+            .footer-logo img { margin: 0 auto 10px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo-area">
-            <img src="image_4.png" alt="Görmenin Ötesinde Logo">
+            <img src="logo.png" alt="Görmenin Ötesinde Logo">
             <div class="logo-text">
                 <h1>Görmenin Ötesinde</h1>
                 <span>@gorselseslendir</span>
@@ -134,13 +150,13 @@
                 <div class="icon"><i class="fas fa-eye"></i></div>
                 <h3>Projenin Amacı</h3>
                 <p>Görme engelli gençlerin şehir yaşamındaki deneyimlerini görünür kılmak ve İzmir'i herkes için daha erişilebilir bir kent yapmak için yola çıktık.</p>
-                <a href="hakkimizda.html" style="color:#000; text-decoration:none; font-weight:900; border-bottom: 3px solid var(--accent-color);">HİKAYEMİZ <i class="fas fa-chevron-right" style="font-size:0.8rem;"></i></a>
+                <a href="hakkimizda.html" style="color:#000; text-decoration:none; font-weight:900; border-bottom: 3px solid var(--accent-color); padding-bottom: 2px;">HİKAYEMİZ <i class="fas fa-chevron-right" style="font-size:0.8rem; margin-left: 5px;"></i></a>
             </div>
 
             <div class="card">
                 <div class="icon"><i class="fas fa-bullseye"></i></div>
                 <h3>Etki Odaklarımız</h3>
-                <ul style="list-style:none; color:#444; font-weight: 600;">
+                <ul style="list-style:none; color:#444; font-weight: 700;">
                     <li style="margin-bottom:15px;"><i class="fas fa-circle" style="color:var(--accent-color); font-size: 0.7rem; margin-right:12px;"></i> Kent Erişilebilirliği</li>
                     <li style="margin-bottom:15px;"><i class="fas fa-circle" style="color:var(--accent-color); font-size: 0.7rem; margin-right:12px;"></i> Sosyal Farkındalık</li>
                     <li><i class="fas fa-circle" style="color:var(--accent-color); font-size: 0.7rem; margin-right:12px;"></i> Katılımcı Şehir Yaşamı</li>
@@ -152,7 +168,7 @@
     <section class="join-us">
         <h2>Bize Katılın</h2>
         <div class="hero-line" style="margin: 25px auto;"></div>
-        <p style="margin-bottom: 40px; color: #555; font-size: 1.2rem; font-weight: 500;">Erişilebilir bir gelecek için gönüllü olun ve İzmir'de fark yaratın.</p>
+        <p style="margin-bottom: 40px; color: #555; font-size: 1.2rem; font-weight: 700;">Erişilebilir bir gelecek için gönüllü olun ve İzmir'de fark yaratın.</p>
         <a href="iletisim.html" class="btn-neon">
             GÖNÜLLÜ OL <i class="fas fa-user-plus"></i>
         </a>
@@ -161,9 +177,10 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-logo">
-                <img src="image_4.png" alt="Görmenin Ötesinde Logo">
-                <h2>GÖRMENİN<br>ÖTESİNDE</h2>
-                <p>@gormeninotesinde</p>
+                <img src="logo.png" alt="Görmenin Ötesinde Logo">
+                <h2>GÖRMENİN ÖTESİNDE</h2>
+                <p>İzmir Kent Deneyimi ve Erişilebilirlik Projesi</p>
+                <p style="color: var(--accent-dark); margin-top: 5px; border: none; padding: 0;">@gormeninotesinde</p>
             </div>
             
             <div class="footer-links">
@@ -181,8 +198,9 @@
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-spotify"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
                 </div>
+                <p style="margin-top: 25px; font-size: 0.9rem; color: #888; font-weight: 700;">info@gorseliseslendir.com</p>
             </div>
         </div>
         <div class="copyright">
