@@ -7,18 +7,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* YENİ NEON RENK PALETİ VE TEMEL AYARLAR */
+        /* NEON RENK PALETİ VE TEMEL AYARLAR */
         :root {
             --bg-color: #f4f2eb;
             --text-color: #1a1a1a;
-            --accent-color: #e3fd01; /* Neon Yeşil */
+            --accent-color: #e3fd01; 
             --accent-dark: #b8cc00;
             --border-color: #e2e0d7;
             --card-bg: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
 
         /* NAVBAR */
         .navbar { 
@@ -100,13 +100,30 @@
         }
         .social-circle:hover { background: var(--accent-color); border-color: var(--accent-color); transform: scale(1.1) rotate(5deg); }
         .copyright { text-align: center; color: #aaa; margin-top: 60px; padding-top: 30px; border-top: 1px solid #f0f0f0; font-size: 0.9rem; font-weight: 500; }
+
+        /* MOBİL UYUMLULUK (RESPONSIVE) */
+        @media (max-width: 768px) {
+            .navbar { padding: 15px 5%; flex-direction: column; gap: 15px; text-align: center; }
+            .nav-links { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .container { padding: 40px 15px; }
+            h1 { font-size: 2.5rem; text-align: center; }
+            h2 { font-size: 1.8rem; margin: 40px 0 15px; border-left-width: 6px; padding-left: 15px; }
+            .divider { margin: 15px auto 30px; }
+            p { font-size: 1rem; text-align: left; }
+            .values-grid, .team-grid, .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .quote-box { padding: 30px 20px; margin: 50px 0; border-radius: 0 25px 25px 0; }
+            .quote-text { font-size: 1.1rem; }
+            footer { padding: 60px 5% 30px; text-align: center; }
+            .footer-logo-text, .social-icons { margin-left: auto; margin-right: auto; justify-content: center; }
+            .team-card { padding: 40px 20px; }
+        }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
         <a href="index.html" class="logo-group">
-            <img src="image_4.png" alt="Görmenin Ötesinde Logo">
+            <img src="logo.png" alt="Görmenin Ötesinde Logo">
             <div class="logo-text">Görmenin Ötesinde</div>
         </a>
         <ul class="nav-links">
@@ -178,7 +195,7 @@
         <div class="footer-grid">
             <div>
                 <a href="index.html" style="text-decoration: none;">
-                    <img src="image_4.png" alt="Görmenin Ötesinde Logo" style="height: 45px; display: block; margin-bottom: 10px;">
+                    <img src="logo.png" alt="Görmenin Ötesinde Logo" style="height: 45px; display: block; margin-bottom: 10px;">
                     <span class="footer-logo-text">Görmenin Ötesinde</span>
                 </a>
                 <p style="font-size: 0.95rem; color: #777; margin-top: 15px; font-weight: 600;">İzmir Kent Deneyimi ve Erişilebilirlik Projesi</p>
